@@ -353,9 +353,22 @@ main { position: relative; z-index: 1; }
   letter-spacing: -0.02em;
   color: var(--white);
   width: fit-content;
-  transition: opacity 0.25s var(--ease), transform 0.35s var(--ease);
+  display: inline-flex;
+  align-items: center;
+  /* Hover uses the standalone `translate` property so it never collides
+     with the GSAP entrance, which animates `transform` + opacity. */
+  transition: translate 0.4s var(--ease);
 }
-.menu__link:hover { opacity: 0.55; transform: translateX(8px); }
+.menu__link::after {
+  content: "→";
+  margin-left: 0.42em;
+  font-size: 0.62em;
+  opacity: 0;
+  translate: -14px 0;
+  transition: opacity 0.3s var(--ease), translate 0.3s var(--ease);
+}
+.menu__link:hover { translate: 16px 0; }
+.menu__link:hover::after { opacity: 1; translate: 0 0; }
 
 .menu__foot { display: flex; flex-direction: column; gap: 22px; }
 .menu__cta {
@@ -369,11 +382,12 @@ main { position: relative; z-index: 1; }
   color: var(--navy-card);
   font-weight: 500;
   font-size: 16px;
-  transition: opacity 0.25s var(--ease);
+  /* translate/box-shadow only — opacity is left for the GSAP entrance */
+  transition: translate 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
-.menu__cta span { transition: transform 0.3s var(--ease); }
-.menu__cta:hover { opacity: 0.9; }
-.menu__cta:hover span { transform: translateX(4px); }
+.menu__cta span { transition: translate 0.3s var(--ease); }
+.menu__cta:hover { translate: 0 -2px; box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.45); }
+.menu__cta:hover span { translate: 4px 0; }
 
 .menu__meta {
   display: flex;

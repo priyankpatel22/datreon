@@ -602,6 +602,8 @@ function initAnimations() {
   const navClockEl = nav.querySelector('.nav__clock');
   const menuClockEl = menu.querySelector('.menu__head .nav__clock');
   const menuLinks = menu.querySelectorAll('.menu__link');
+  // Links + the "Start a Project" CTA cascade in together on open
+  const menuRevealEls = [...menuLinks, menu.querySelector('.menu__cta')].filter(Boolean);
 
   const setMenu = (open) => {
     if (open) {
@@ -642,17 +644,18 @@ function initAnimations() {
           onComplete: () => gsap.set(menuClockEl, { clearProps: 'x,y,opacity' }) }
       );
 
-      // Stagger nav links in
-      gsap.killTweensOf(menuLinks);
-      gsap.fromTo(menuLinks,
-        { y: 22, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out', stagger: 0.06, delay: 0.2 }
+      // Stagger nav links + CTA in
+      gsap.killTweensOf(menuRevealEls);
+      gsap.fromTo(menuRevealEls,
+        { y: 26, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.55, ease: 'power3.out', stagger: 0.07, delay: 0.18,
+          onComplete: () => gsap.set(menuRevealEls, { clearProps: 'transform,opacity' }) }
       );
 
     } else {
-      gsap.killTweensOf([menuClockEl, menuLinks]);
+      gsap.killTweensOf([menuClockEl, ...menuRevealEls]);
       gsap.set(menuClockEl, { clearProps: 'x,y,opacity' });
-      gsap.set(menuLinks, { clearProps: 'y,opacity' });
+      gsap.set(menuRevealEls, { clearProps: 'transform,opacity' });
 
       menu.classList.remove('is-open');
       menu.setAttribute('aria-hidden', 'true');
