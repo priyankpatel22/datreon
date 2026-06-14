@@ -1,0 +1,10 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.log
+
+# Local Claude Code config (not for the public repo)
+.claude/
+
+# Node (if tooling is added later)
+node_modules/

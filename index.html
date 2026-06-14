@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datreon — Software Engineering &amp; AI Consulting</title>
+  <meta name="description" content="Datreon is a Virginia-based software engineering and AI consulting firm. From web and mobile apps to AI automation, cloud, and data — we design, build, and modernize technology at every layer of the stack." />
+  <meta name="author" content="Datreon" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#FBFBFA" />
+  <link rel="canonical" href="https://datreon.ai/" />
+
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="assets/datreon-icon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Datreon" />
+  <meta property="og:title" content="Datreon — Software Engineering &amp; AI Consulting" />
+  <meta property="og:description" content="Virginia-based software engineering and AI consulting. We design, build, and modernize technology at every layer of the stack." />
+  <meta property="og:url" content="https://datreon.ai/" />
+  <meta property="og:image" content="https://datreon.ai/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Datreon — Engineering Intelligence. Delivering Impact." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Datreon — Software Engineering &amp; AI Consulting" />
+  <meta name="twitter:description" content="Virginia-based software engineering and AI consulting. We design, build, and modernize technology at every layer of the stack." />
+  <meta name="twitter:image" content="https://datreon.ai/assets/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css?v=22" />
+
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js" } }
+  </script>
+
+  <!-- Structured data: Organization / ProfessionalService -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Datreon",
+    "alternateName": "Datreon — Software Engineering & AI Consulting",
+    "description": "Virginia-based software engineering and AI consulting firm delivering web and mobile applications, AI integration and automation, cloud and DevOps, data engineering, and legacy modernization.",
+    "url": "https://datreon.ai/",
+    "email": "hello@datreon.ai",
+    "image": "https://datreon.ai/assets/og-image.png",
+    "logo": "https://datreon.ai/assets/datreon-icon.png",
+    "slogan": "Engineering Intelligence. Delivering Impact.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Chesapeake",
+      "addressRegion": "VA",
+      "addressCountry": "US"
+    },
+    "areaServed": ["US", "GB", "CA", "AU", "EU"],
+    "sameAs": ["https://www.linkedin.com/company/datreon"],
+    "knowsAbout": [
+      "Software Engineering",
+      "AI Integration & Automation",
+      "Cloud & DevOps",
+      "Data Engineering & Analytics",
+      "Legacy Modernization"
+    ]
+  }
+  </script>
+</head>
+<body class="theme-light">
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__brand">
+      <img class="preloader__mark" src="assets/datreon-icon.png" alt="" />
+      <img class="preloader__word" src="assets/datreon-wordmark.png" alt="Datreon" />
+    </div>
+  </div>
+
+  <!-- Film grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Fixed Three.js hero background -->
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+  <!-- ===================== 1. NAVIGATION ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="nav__brand" data-scroll>
+        <img class="nav__mark" src="assets/datreon-icon.png" alt="" />
+        <img class="nav__wordmark" src="assets/datreon-wordmark.png" alt="Datreon" />
+      </a>
+      <div class="nav__right">
+        <div class="nav__clock" aria-hidden="true">
+          <span class="nav__loc">Virginia, USA</span>
+          <span class="nav__time" id="nav-time"><span class="time-digits">--:--</span><span class="time-ampm"> --</span></span>
+        </div>
+        <button class="nav__menu" id="menu-open" aria-haspopup="dialog" aria-expanded="false" aria-controls="menu">
+          <span class="nav__menu-label">Menu</span>
+          <span class="nav__menu-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== MENU OVERLAY ===================== -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <div class="menu__scrim" id="menu-scrim"></div>
+    <div class="menu__panel" role="dialog" aria-modal="true" aria-label="Site menu">
+      <div class="menu__head">
+        <div class="nav__clock">
+          <span class="nav__loc">Virginia, USA</span>
+          <span class="nav__time" id="menu-time"><span class="time-digits">--:--</span><span class="time-ampm"> --</span></span>
+        </div>
+        <button class="menu__close" id="menu-close">
+          <span>Close</span>
+          <span class="menu__close-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+          </span>
+        </button>
+      </div>
+      <nav class="menu__nav" aria-label="Primary">
+        <a href="#top" class="menu__link" data-scroll>Home</a>
+        <a href="#services" class="menu__link" data-scroll>Services</a>
+        <a href="#work" class="menu__link" data-scroll>Work</a>
+        <a href="#about" class="menu__link" data-scroll>About</a>
+        <a href="#contact" class="menu__link" data-scroll>Contact</a>
+      </nav>
+      <div class="menu__foot">
+        <a href="#contact" class="menu__cta" data-scroll>Start a Project <span aria-hidden="true">→</span></a>
+        <div class="menu__meta">
+          <a href="mailto:hello@datreon.ai" class="menu__email">hello@datreon.ai <span aria-hidden="true">↗</span></a>
+          <ul class="menu__social">
+            <li><a href="https://www.linkedin.com/company/datreon" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="top">
+
+    <!-- ===================== 2. HERO ===================== -->
+    <section class="hero" id="hero">
+      <div class="hero__content">
+        <p class="eyebrow hero__eyebrow">Software Engineering &amp; AI Consulting</p>
+        <h1 class="hero__title" id="hero-title"><span class="ht-dim">We </span>Engineer<span class="ht-dim"> the </span>Systems Organizations<span class="ht-dim"> Depend&nbsp;On</span></h1>
+        <p class="hero__sub">From intelligent web and mobile applications to AI-powered automation and cloud infrastructure — we design, build, and modernize technology at every layer of the stack.</p>
+        <div class="hero__cta">
+          <a href="#contact" class="btn btn--fill" data-scroll>Start a Project</a>
+          <a href="#work" class="btn btn--outline" data-scroll>See Our Work</a>
+        </div>
+      </div>
+      <div class="hero__scroll" id="hero-scroll" aria-hidden="true">
+        <span class="hero__scroll-label">Scroll</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- ===================== 3. SERVICES ===================== -->
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow" data-reveal>What We Do</p>
+          <h2 class="section__title">End-to-End Technology. One&nbsp;Team.</h2>
+        </div>
+
+        <div class="services__list">
+
+          <article class="srow">
+            <span class="srow__num">01</span>
+            <div class="srow__main">
+              <h3>Web &amp; Mobile Applications</h3>
+              <div class="srow__reveal">
+                <p>React, Angular, Node.js, iOS &amp; Android. Custom platforms, portals, and consumer-facing apps.</p>
+              </div>
+            </div>
+            <span class="srow__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M6 18L18 6M18 6H9M18 6v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </article>
+
+          <article class="srow">
+            <span class="srow__num">02</span>
+            <div class="srow__main">
+              <h3>AI Integration &amp; Automation</h3>
+              <div class="srow__reveal">
+                <p>LLM integration, intelligent workflows, document processing, AI readiness assessments.</p>
+              </div>
+            </div>
+            <span class="srow__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M6 18L18 6M18 6H9M18 6v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </article>
+
+          <article class="srow">
+            <span class="srow__num">03</span>
+            <div class="srow__main">
+              <h3>Cloud &amp; DevOps</h3>
+              <div class="srow__reveal">
+                <p>AWS, Azure, GCP architecture. CI/CD pipelines, migration strategy, security, cost optimization.</p>
+              </div>
+            </div>
+            <span class="srow__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M6 18L18 6M18 6H9M18 6v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </article>
+
+          <article class="srow">
+            <span class="srow__num">04</span>
+            <div class="srow__main">
+              <h3>Data Engineering &amp; Analytics</h3>
+              <div class="srow__reveal">
+                <p>Pipelines, dashboards, and reporting systems that turn raw data into decisions.</p>
+              </div>
+            </div>
+            <span class="srow__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M6 18L18 6M18 6H9M18 6v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </article>
+
+          <article class="srow">
+            <span class="srow__num">05</span>
+            <div class="srow__main">
+              <h3>Legacy Modernization</h3>
+              <div class="srow__reveal">
+                <p>Safely upgrade aging systems without disrupting operations. Assess, plan, execute.</p>
+              </div>
+            </div>
+            <span class="srow__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M6 18L18 6M18 6H9M18 6v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </article>
+
+          <article class="srow">
+            <span class="srow__num">06</span>
+            <div class="srow__main">
+              <h3>AI Training &amp; Advisory</h3>
+              <div class="srow__reveal">
+                <p>Workshops, readiness reviews, and hands-on coaching for teams adopting AI tools.</p>
+              </div>
+            </div>
+            <span class="srow__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M6 18L18 6M18 6H9M18 6v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 4. STATS BAR ===================== -->
+    <section class="stats" id="stats">
+      <div class="container stats__grid">
+        <div class="stat" data-stat>
+          <span class="stat__value"><span data-count="5">0</span>+</span>
+          <span class="stat__label">Years Consulting</span>
+        </div>
+        <div class="stat" data-stat>
+          <span class="stat__value">Full-Stack</span>
+          <span class="stat__label">Capability</span>
+        </div>
+        <div class="stat" data-stat>
+          <span class="stat__value stat__value--sm">Web · Mobile · Cloud · AI · Data</span>
+          <span class="stat__label">Every Layer of the Stack</span>
+        </div>
+        <div class="stat" data-stat>
+          <span class="stat__value stat__value--sm">Virginia-Based.</span>
+          <span class="stat__label">Globally Capable.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 5. PROCESS ===================== -->
+    <section class="process" id="process">
+      <div class="process__pin">
+        <div class="container">
+          <div class="section__head process__head">
+            <p class="eyebrow" data-reveal>Our Approach</p>
+            <h2 class="section__title">How We Work</h2>
+          </div>
+        </div>
+        <div class="process__track" id="process-track">
+          <article class="step">
+            <span class="step__num">01</span>
+            <h3>Discover</h3>
+            <p>We learn your systems, constraints, and goals before writing a line of code.</p>
+          </article>
+          <article class="step">
+            <span class="step__num">02</span>
+            <h3>Architect</h3>
+            <p>We design solutions that are scalable, secure, and built to last.</p>
+          </article>
+          <article class="step">
+            <span class="step__num">03</span>
+            <h3>Build</h3>
+            <p>Senior engineers deliver. No juniors, no handoffs, no surprises.</p>
+          </article>
+          <article class="step">
+            <span class="step__num">04</span>
+            <h3>Deploy</h3>
+            <p>We ship, monitor, and stay accountable after launch.</p>
+          </article>
+          <article class="step">
+            <span class="step__num">05</span>
+            <h3>Evolve</h3>
+            <p>We grow with you — new features, new integrations, new capabilities.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 6. WORK ===================== -->
+    <section class="section work" id="work">
+      <canvas id="work-canvas" aria-hidden="true"></canvas>
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow" data-reveal>Past Performance</p>
+          <h2 class="section__title">Proven Delivery</h2>
+        </div>
+
+        <article class="case">
+          <div class="case__media" data-media>
+            <div class="media__inner media__inner--brand media__inner--swisslog">
+              <img src="assets/swisslog-brand-new-logo.avif" alt="Swisslog" class="case__brand-img" />
+            </div>
+            <span class="media__caption">Logistics Automation — Newport News, VA</span>
+          </div>
+
+          <div class="case__body">
+            <span class="work__badge" data-reveal>Featured Engagement</span>
+            <h3 class="case__client" data-reveal>Swisslog Logistics&nbsp;Inc</h3>
+            <p class="case__desc" data-reveal>Multi-year software consulting engagement. Architecture design, systems integration, and technical leadership for enterprise logistics automation platforms.</p>
+            <div class="case__tags" data-reveal>
+              <span class="case__tag">5+ Years</span>
+              <span class="case__tag">Architecture</span>
+              <span class="case__tag">Systems Integration</span>
+              <span class="case__tag">Technical Leadership</span>
+              <span class="case__tag">Enterprise</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Green Light Auto Auctions case -->
+        <article class="case case--reverse" data-reveal>
+          <div class="case__media">
+            <div class="media__inner media__inner--brand media__inner--gla">
+              <img src="assets/Green Light (2).png" alt="Green Light Auto Auctions" class="case__brand-img" />
+            </div>
+            <span class="media__caption">Automotive Auction Platform — Web &amp; Mobile</span>
+          </div>
+
+          <div class="case__body">
+            <span class="work__badge" data-reveal>Founder-Built</span>
+            <h3 class="case__client" data-reveal>Green Light Auto&nbsp;Auctions</h3>
+            <p class="case__desc" data-reveal>Full-stack car auction platform — web and mobile, Brand Identity, Marketing.</p>
+            <div class="case__tags" data-reveal>
+              <span class="case__tag">4+ Years</span>
+              <span class="case__tag">Web Platform</span>
+              <span class="case__tag">Mobile App</span>
+              <span class="case__tag">Brand Identity</span>
+              <span class="case__tag">Marketing</span>
+            </div>
+          </div>
+        </article>
+
+        <p class="work__note" data-reveal>Formal, multi-year contracts and documented delivery — the foundation of every proposal we submit.</p>
+      </div>
+    </section>
+
+    <!-- ===================== 7. WHO WE SERVE ===================== -->
+    <section class="section serve" id="serve">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow" data-reveal>Who We Serve</p>
+          <h2 class="section__title">Built for Organizations That Can't Afford to&nbsp;Fail</h2>
+        </div>
+
+        <div class="serve__grid">
+
+          <article class="serve__col" data-card>
+            <span class="serve__index">A</span>
+            <h3>Government &amp; Public Sector</h3>
+            <p>Federal, state, city, and county agencies modernizing citizen services and internal operations. SAM.gov registered. Virginia SWaM certified.</p>
+          </article>
+
+          <article class="serve__col" data-card>
+            <span class="serve__index">B</span>
+            <h3>Enterprise &amp; Commercial</h3>
+            <p>Mid-to-large organizations that need a trusted technical partner for complex builds and integrations.</p>
+          </article>
+
+          <article class="serve__col" data-card>
+            <span class="serve__index">C</span>
+            <h3>International</h3>
+            <p>Government agencies and enterprise organizations across the UK, Canada, Australia, and the EU.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 8. ABOUT ===================== -->
+    <section class="section about" id="about">
+      <div class="container about__grid">
+        <div class="about__copy">
+          <div class="section__head">
+            <p class="eyebrow" data-reveal>About Datreon</p>
+            <h2 class="section__title">Founder-Led. Senior-Delivered.</h2>
+          </div>
+          <p data-reveal>Datreon was founded by a senior software engineer with over five years of formal consulting experience, delivering architecture design, systems integration, and technical leadership for enterprise clients.</p>
+          <p data-reveal>When you work with Datreon, you work directly with a senior engineer from day one — no account managers, no handoffs, no diluted delivery.</p>
+          <ul class="about__creds" data-reveal>
+            <li>Virginia-based</li>
+            <li>Full-stack capability</li>
+            <li>Formal past performance on record</li>
+          </ul>
+        </div>
+        <div class="about__visual about__visual--card" data-reveal>
+          <div class="promise__card">
+            <span class="promise__label">Our Promise</span>
+            <blockquote class="promise__quote">"Most technology fails not because of the technology — but because nobody took real ownership. That's what we bring."</blockquote>
+            <footer class="promise__foot">
+              <span class="promise__author">— Priyank Patel, Founder &amp; CEO</span>
+              <a href="#contact" class="promise__cta" data-scroll>Start a Project <span aria-hidden="true">→</span></a>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 9. CTA ===================== -->
+    <section class="cta" id="contact">
+      <div class="cta__glow" aria-hidden="true"></div>
+      <div class="container cta__inner">
+        <p class="eyebrow cta__eyebrow" data-reveal>Get In Touch</p>
+        <h2 class="section__title cta__title">Ready to Build Something That&nbsp;Works?</h2>
+        <p class="cta__sub" data-reveal>Whether you have a defined project, an RFP, or just a problem to solve — we're direct and easy to reach.</p>
+        <a href="mailto:hello@datreon.ai" class="btn btn--fill btn--lg" data-reveal>Start a Conversation</a>
+        <p class="cta__domain" data-reveal>datreon.ai</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== 10. FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <div class="nav__brand">
+          <img class="nav__mark" src="assets/datreon-icon.png" alt="" />
+          <img class="nav__wordmark" src="assets/datreon-wordmark.png" alt="Datreon" />
+        </div>
+        <p class="footer__tagline">Engineering Intelligence. Delivering Impact.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#services" data-scroll>Services</a>
+        <a href="#work" data-scroll>Work</a>
+        <a href="#about" data-scroll>About</a>
+        <a href="#contact" data-scroll>Contact</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://www.linkedin.com/company/datreon" aria-label="Datreon on LinkedIn" rel="noopener" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v14.8H.2V8zm7.6 0h4.4v2h.06c.61-1.16 2.11-2.38 4.35-2.38 4.65 0 5.51 3.06 5.51 7.04v8.14h-4.6v-7.2c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8v7.33H7.8V8z"/></svg>
+        </a>
+        <span class="footer__domain">datreon.ai</span>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Datreon · Chesapeake, Virginia</p>
+    </div>
+  </footer>
+
+  <!-- GSAP + Lenis -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+
+  <script type="module" src="js/main.js?v=15"></script>
+</body>
+</html>

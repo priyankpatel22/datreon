@@ -1,0 +1,19 @@
+# ============================================================
+# Cloudflare Pages headers — security + caching
+# Auto-applied on deploy. Ignored by the local python preview server.
+# ============================================================
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Optional Content-Security-Policy. After your first deploy, open the live site,
+# check the browser console for "Refused to load" errors, and if it's clean,
+# add this as an indented line under the /* block above to enable it:
+#   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'
