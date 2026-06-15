@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Datreon — Capability Statement</title>
+<meta name="robots" content="noindex" /><!-- unlinked deliverable; remove once UEI/CAGE are filled if you want it indexed -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#111213;
+    --near:#0B0B0C;
+    --paper:#FBFBFA;
+    --line:#E4E4E1;
+    --muted:#6A6C6E;
+    --soft:#F4F4F2;
+    --accent:#111213;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  @page{ size:Letter; margin:0; }
+  html,body{ background:#dadada; }
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .page{
+    width:8.5in; height:11in;
+    background:var(--paper);
+    margin:0 auto;
+    position:relative;
+    display:flex; flex-direction:column;
+    overflow:hidden;
+  }
+  .mono{ font-family:'JetBrains Mono',monospace; }
+
+  /* ---------- HEADER ---------- */
+  .head{
+    background:var(--near); color:#fff;
+    padding:0.46in 0.5in 0.4in;
+    position:relative;
+  }
+  .head__top{ display:flex; align-items:center; justify-content:space-between; }
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .brand img{ height:34px; width:auto; filter:invert(1) brightness(2); }
+  .brand__word{
+    font-weight:700; font-size:23px; letter-spacing:0.34em;
+    padding-left:2px;
+  }
+  .head__tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:9px; letter-spacing:0.32em; text-transform:uppercase;
+    color:#9a9c9e; text-align:right; line-height:1.7;
+  }
+  .head__title{
+    margin-top:0.34in;
+    display:flex; align-items:baseline; gap:14px;
+    border-top:1px solid rgba(255,255,255,0.14);
+    padding-top:0.2in;
+  }
+  .head__title h1{
+    font-size:26px; font-weight:800; letter-spacing:-0.01em;
+  }
+  .head__title .sep{ flex:1; }
+  .head__slogan{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px; letter-spacing:0.22em; text-transform:uppercase;
+    color:#cfcfce;
+  }
+  .head__sub{
+    margin-top:9px; font-size:11px; color:#b9bbbc; max-width:5.3in; line-height:1.55;
+  }
+
+  /* ---------- BODY ---------- */
+  .body{
+    flex:1; display:grid; grid-template-columns:1fr 2.55in;
+    gap:0;
+  }
+  .col-main{ padding:0.34in 0.34in 0.2in 0.5in; }
+  .col-side{ background:var(--soft); border-left:1px solid var(--line); padding:0.34in 0.42in 0.2in 0.34in; }
+
+  .sec{ margin-bottom:0.26in; }
+  .sec:last-child{ margin-bottom:0; }
+  .sec__label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:9.5px; letter-spacing:0.2em; text-transform:uppercase;
+    color:var(--ink); font-weight:600;
+    display:flex; align-items:center; gap:9px;
+    margin-bottom:11px;
+  }
+  .sec__label::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .col-side .sec__label::after{ background:#dadbd7; }
+
+  .lead{ font-size:11px; line-height:1.62; color:#2c2d2e; }
+
+  /* core competencies */
+  .comp{ display:grid; grid-template-columns:1fr 1fr; gap:9px 16px; }
+  .comp__item{ }
+  .comp__h{ font-size:11px; font-weight:700; letter-spacing:-0.01em; }
+  .comp__d{ font-size:9.3px; color:var(--muted); line-height:1.45; margin-top:2px; }
+
+  /* differentiators */
+  .diff{ list-style:none; display:flex; flex-direction:column; gap:7px; }
+  .diff li{ font-size:10.3px; line-height:1.45; padding-left:16px; position:relative; color:#2c2d2e; }
+  .diff li::before{
+    content:""; position:absolute; left:0; top:5px;
+    width:6px; height:6px; background:var(--near); transform:rotate(45deg);
+  }
+  .diff strong{ font-weight:700; }
+
+  /* past performance */
+  .pp{ display:flex; flex-direction:column; gap:11px; }
+  .pp__item{ border-left:2px solid var(--near); padding-left:12px; }
+  .pp__top{ display:flex; align-items:baseline; justify-content:space-between; gap:10px; }
+  .pp__client{ font-size:11.5px; font-weight:700; }
+  .pp__meta{ font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:0.08em; color:var(--muted); text-transform:uppercase; white-space:nowrap; }
+  .pp__desc{ font-size:9.6px; line-height:1.5; color:#3a3b3c; margin-top:3px; }
+  .pp__tags{ margin-top:5px; display:flex; flex-wrap:wrap; gap:5px; }
+  .pp__tag{ font-family:'JetBrains Mono',monospace; font-size:7.5px; letter-spacing:0.05em; text-transform:uppercase; color:#4a4b4c; border:1px solid var(--line); border-radius:2px; padding:2px 6px; }
+
+  /* ---------- SIDEBAR ---------- */
+  .data dl{ display:grid; grid-template-columns:auto 1fr; gap:6px 10px; }
+  .data dt{ font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); padding-top:1px; }
+  .data dd{ font-size:10px; font-weight:600; color:var(--ink); line-height:1.35; }
+  .fill{ color:#9a6a00; border-bottom:1px dotted #b98a2a; font-weight:600; }
+
+  .codes{ display:flex; flex-direction:column; gap:6px; }
+  .code{ display:grid; grid-template-columns:46px 1fr; gap:8px; align-items:baseline; }
+  .code__n{ font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:600; color:var(--ink); }
+  .code__d{ font-size:8.8px; color:var(--muted); line-height:1.35; }
+
+  .certs{ display:flex; flex-direction:column; gap:6px; }
+  .cert{ display:flex; align-items:flex-start; gap:7px; font-size:9.6px; line-height:1.4; color:#2c2d2e; }
+  .cert__k{ width:5px; height:5px; margin-top:4px; background:var(--near); flex:none; transform:rotate(45deg); }
+
+  .naics-primary{ font-weight:700; }
+
+  /* ---------- FOOTER ---------- */
+  .foot{
+    background:var(--near); color:#cfcfce;
+    padding:0.16in 0.5in;
+    display:flex; align-items:center; justify-content:space-between;
+    font-family:'JetBrains Mono',monospace;
+    font-size:9px; letter-spacing:0.12em; text-transform:uppercase;
+  }
+  .foot a{ color:#fff; text-decoration:none; }
+  .foot__poc{ color:#9a9c9e; }
+</style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- HEADER -->
+    <header class="head">
+      <div class="head__top">
+        <div class="brand">
+          <img src="assets/datreon-icon.png" alt="" />
+          <span class="brand__word">DATREON</span>
+        </div>
+        <div class="head__tag">
+          Capability Statement<br/>
+          Software Engineering &amp; AI Consulting
+        </div>
+      </div>
+      <div class="head__title">
+        <h1>Engineering Intelligence.<br/>Delivering Impact.</h1>
+        <span class="sep"></span>
+      </div>
+      <p class="head__sub">
+        Datreon is a Virginia-based software engineering and AI consulting firm. We design,
+        build, and modernize technology at every layer of the stack — delivering production-grade
+        systems for organizations that cannot afford to fail.
+      </p>
+    </header>
+
+    <!-- BODY -->
+    <div class="body">
+
+      <!-- MAIN COLUMN -->
+      <div class="col-main">
+
+        <section class="sec">
+          <div class="sec__label">Core Competencies</div>
+          <div class="comp">
+            <div class="comp__item">
+              <div class="comp__h">Web &amp; Mobile Applications</div>
+              <div class="comp__d">React, Angular, Node.js, iOS &amp; Android. Custom platforms, portals, and consumer apps.</div>
+            </div>
+            <div class="comp__item">
+              <div class="comp__h">AI Integration &amp; Automation</div>
+              <div class="comp__d">LLM integration, intelligent workflows, document processing, AI readiness.</div>
+            </div>
+            <div class="comp__item">
+              <div class="comp__h">Cloud &amp; DevOps</div>
+              <div class="comp__d">AWS, Azure, GCP architecture. CI/CD, migration, security, cost optimization.</div>
+            </div>
+            <div class="comp__item">
+              <div class="comp__h">Data Engineering &amp; Analytics</div>
+              <div class="comp__d">Pipelines, dashboards, and reporting that turn raw data into decisions.</div>
+            </div>
+            <div class="comp__item">
+              <div class="comp__h">Legacy Modernization</div>
+              <div class="comp__d">Safely upgrade aging systems without disrupting operations. Assess, plan, execute.</div>
+            </div>
+            <div class="comp__item">
+              <div class="comp__h">AI Training &amp; Advisory</div>
+              <div class="comp__d">Workshops, readiness reviews, and hands-on coaching for teams adopting AI.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="sec">
+          <div class="sec__label">Differentiators</div>
+          <ul class="diff">
+            <li><strong>One team, total ownership.</strong> You work directly with the team building your solution from day one — no account managers, no handoffs, no diluted delivery.</li>
+            <li><strong>Real ownership.</strong> Most technology fails not because of the technology, but because nobody took real ownership. That is what we bring to every engagement.</li>
+            <li><strong>End-to-end, one team.</strong> Architecture through launch across the full stack — web, mobile, AI, cloud, and data — without subcontracting the core work.</li>
+            <li><strong>Documented past performance.</strong> Multi-year contracts and delivered outcomes on record — the foundation of every proposal we submit.</li>
+          </ul>
+        </section>
+
+        <section class="sec">
+          <div class="sec__label">Past Performance</div>
+          <div class="pp">
+            <div class="pp__item">
+              <div class="pp__top">
+                <span class="pp__client">Swisslog Logistics Inc</span>
+                <span class="pp__meta">5+ Years · Newport News, VA</span>
+              </div>
+              <p class="pp__desc">Multi-year software consulting engagement. Architecture design, systems integration, and technical leadership for enterprise logistics automation platforms.</p>
+              <div class="pp__tags">
+                <span class="pp__tag">Architecture</span>
+                <span class="pp__tag">Systems Integration</span>
+                <span class="pp__tag">Technical Leadership</span>
+                <span class="pp__tag">Enterprise</span>
+              </div>
+            </div>
+            <div class="pp__item">
+              <div class="pp__top">
+                <span class="pp__client">Green Light Auto Auctions</span>
+                <span class="pp__meta">4+ Years · Web &amp; Mobile</span>
+              </div>
+              <p class="pp__desc">Full-stack automotive auction platform — web and mobile application development, brand identity, and marketing. Founder-built and operated.</p>
+              <div class="pp__tags">
+                <span class="pp__tag">Web Platform</span>
+                <span class="pp__tag">Mobile App</span>
+                <span class="pp__tag">Brand Identity</span>
+                <span class="pp__tag">Marketing</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="col-side">
+
+        <section class="sec data">
+          <div class="sec__label">Company Data</div>
+          <dl>
+            <dt>Business</dt><dd>Small Business</dd>
+            <dt>Founded</dt><dd>Founder-led · 5+ yrs consulting</dd>
+            <dt>Location</dt><dd>Virginia, USA</dd>
+            <dt>SAM.gov</dt><dd>Registered &amp; Active</dd>
+            <dt>UEI</dt><dd><span class="fill">&nbsp;&nbsp;to&nbsp;add&nbsp;&nbsp;</span></dd>
+            <dt>CAGE</dt><dd><span class="fill">&nbsp;&nbsp;to&nbsp;add&nbsp;&nbsp;</span></dd>
+          </dl>
+        </section>
+
+        <section class="sec">
+          <div class="sec__label">NAICS Codes</div>
+          <div class="codes">
+            <div class="code"><span class="code__n naics-primary">541511</span><span class="code__d">Custom Computer Programming Services <em>(primary)</em></span></div>
+            <div class="code"><span class="code__n">541512</span><span class="code__d">Computer Systems Design Services</span></div>
+            <div class="code"><span class="code__n">541519</span><span class="code__d">Other Computer Related Services</span></div>
+            <div class="code"><span class="code__n">518210</span><span class="code__d">Computing Infrastructure, Data Processing &amp; Hosting</span></div>
+            <div class="code"><span class="code__n">541611</span><span class="code__d">Management &amp; Technology Consulting</span></div>
+            <div class="code"><span class="code__n">611420</span><span class="code__d">Computer / AI Training</span></div>
+          </div>
+        </section>
+
+        <section class="sec">
+          <div class="sec__label">Certifications</div>
+          <div class="certs">
+            <div class="cert"><span class="cert__k"></span><span>Commonwealth of Virginia <strong>SWaM</strong> Certified (Small, Women-owned &amp; Minority-owned Business)</span></div>
+            <div class="cert"><span class="cert__k"></span><span>SAM.gov registered federal contractor</span></div>
+          </div>
+        </section>
+
+        <section class="sec">
+          <div class="sec__label">Markets Served</div>
+          <div class="certs">
+            <div class="cert"><span class="cert__k"></span><span>Government &amp; Public Sector — federal, state &amp; local</span></div>
+            <div class="cert"><span class="cert__k"></span><span>Enterprise &amp; Commercial</span></div>
+            <div class="cert"><span class="cert__k"></span><span>International — UK, Canada, Australia &amp; EU</span></div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="foot">
+      <span class="foot__poc">POC: Priyank Patel · Founder &amp; CEO</span>
+      <span>
+        <a href="https://datreon.ai">datreon.ai</a>&nbsp;&nbsp;·&nbsp;&nbsp;hello@datreon.ai&nbsp;&nbsp;·&nbsp;&nbsp;linkedin.com/company/datreon
+      </span>
+    </footer>
+
+  </div>
+</body>
+</html>
