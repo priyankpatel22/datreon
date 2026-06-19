@@ -1074,8 +1074,23 @@ body.theme-light .cta .btn--fill:hover { background: #FFFFFF; }
   font-size: 19px;
 }
 
+.cta__contact {
+  margin-top: 28px;
+  font-size: 15px;
+  color: #9A9A9A;
+}
+.cta__contact a {
+  color: #DADADA;
+  transition: color 0.25s var(--ease);
+}
+.cta__contact a:hover { color: #FFFFFF; }
+.cta__sep {
+  margin: 0 12px;
+  color: #5A5A5A;
+}
+
 .cta__domain {
-  margin-top: 32px;
+  margin-top: 18px;
   font-family: var(--font-mono);
   font-weight: 500;
   font-size: 13px;
@@ -1152,6 +1167,23 @@ body.theme-light .cta .btn--fill:hover { background: #FFFFFF; }
   letter-spacing: 0.2em;
   color: #9A9A9A;
 }
+
+.footer__social a.footer__phone {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  margin-left: 4px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: #9A9A9A;
+  transition: color 0.25s var(--ease);
+}
+.footer__social a.footer__phone:hover { color: #FFFFFF; border-color: transparent; }
 
 .footer__bottom {
   margin-top: 56px;
