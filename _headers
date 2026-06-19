@@ -9,11 +9,16 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://cdn.jsdelivr.net; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'
 
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Optional Content-Security-Policy. After your first deploy, open the live site,
-# check the browser console for "Refused to load" errors, and if it's clean,
-# add this as an indented line under the /* block above to enable it:
-#   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'
+# Content-Security-Policy (above) was validated against the live resource set:
+#   script-src  -> 'self' + inline importmap/JSON-LD + GSAP/Lenis/Three.js from cdn.jsdelivr.net
+#   style-src   -> 'self' + inline <style> (capability page) + Google Fonts CSS
+#   font-src    -> Google Fonts (fonts.gstatic.com)
+#   img-src     -> 'self' + data: URIs
+#   connect-src -> 'self' + cdn.jsdelivr.net (Three.js ES module)
+# If you later add an analytics/CDN/script origin, append it to the matching directive
+# or it will be blocked. 'unsafe-inline' in script-src is required by the <script type="importmap">.
