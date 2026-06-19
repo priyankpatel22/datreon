@@ -1277,7 +1277,7 @@ body.theme-light .cta .btn--fill:hover { background: #FFFFFF; }
    ============================================================ */
 
 body.theme-light {
-  --navy-deep: #FBFBFA;        /* gallery-white page background */
+  --navy-deep: #F2F2F0;        /* soft gallery white — even tone, no harsh bright-white flash on scroll */
   --navy-card: #FFFFFF;        /* card surfaces */
   --white: #111111;            /* primary text becomes ink */
   --gray: #686868;             /* secondary text */
@@ -1289,11 +1289,11 @@ body.theme-light ::selection { background: #111111; color: #FBFBFA; }
 
 body.theme-light .grain { mix-blend-mode: multiply; opacity: 0.05; }
 
-body.theme-light .preloader { background: #FBFBFA; }
+body.theme-light .preloader { background: #F2F2F0; }
 body.theme-light .preloader__word { color: #111111; }
 
 body.theme-light .hero::before {
-  background: radial-gradient(50% 55% at 50% 30%, rgba(17, 17, 17, 0.04), transparent 70%);
+  background: none; /* removed vignette so the hero is an even soft tone — no bright-white void below the buttons */
 }
 
 /* Buttons */
@@ -1310,12 +1310,12 @@ body.theme-light .btn--outline:hover { border-color: #111111; background: rgba(1
 
 /* Navigation */
 body.theme-light .nav.is-solid {
-  background: rgba(251, 251, 250, 0.88);
+  background: rgba(242, 242, 240, 0.88);
   border-bottom-color: rgba(17, 17, 17, 0.08);
   box-shadow: 0 10px 40px -20px rgba(0, 0, 0, 0.18);
 }
 body.theme-light .nav__links a:hover { color: #111111; }
-body.theme-light .nav__mobile { background: rgba(251, 251, 250, 0.97); border-bottom-color: rgba(17, 17, 17, 0.08); }
+body.theme-light .nav__mobile { background: rgba(242, 242, 240, 0.97); border-bottom-color: rgba(17, 17, 17, 0.08); }
 body.theme-light .nav__mobile .btn { color: #FBFBFA; }
 
 /* Services rows */
