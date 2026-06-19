@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://datreon.ai/sitemap.xml
+Sitemap: https://datreon.tech/sitemap.xml
