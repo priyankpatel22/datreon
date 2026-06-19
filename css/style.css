@@ -27,7 +27,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: auto; }
+html { scroll-behavior: auto; background: #F2F2F0; } /* match page so mobile fling/overscroll never flashes white root */
 
 body {
   background: var(--navy-deep);
@@ -98,6 +98,7 @@ ul { list-style: none; }
   height: 100vh;
   z-index: 0;
   pointer-events: none;
+  background: var(--navy-deep); /* soft page tone behind the transparent WebGL — no white flash when the fixed layer repaints on scroll */
 }
 
 main { position: relative; z-index: 1; }
