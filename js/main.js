@@ -894,7 +894,10 @@ function initAnimations() {
 
 window.addEventListener('load', () => ScrollTrigger.refresh());
 
-initHeroScene();
+// The hero fluid sim is pointer-driven and adds nothing on touch devices —
+// skip it on coarse-pointer (mobile) so its fixed WebGL layer can't cause
+// scroll-compositing flashes on iOS/Android.
+if (finePointer) initHeroScene();
 initWorkScene();
 initAboutScene();
 

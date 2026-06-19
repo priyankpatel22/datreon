@@ -100,6 +100,11 @@ ul { list-style: none; }
   pointer-events: none;
   background: var(--navy-deep); /* soft page tone behind the transparent WebGL — no white flash when the fixed layer repaints on scroll */
 }
+/* Touch devices: drop the fixed WebGL layer entirely — it's pointer-only,
+   adds nothing on mobile, and the live GPU layer caused scroll flashes. */
+@media (pointer: coarse) {
+  #hero-canvas { display: none !important; }
+}
 
 main { position: relative; z-index: 1; }
 
