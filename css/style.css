@@ -1696,3 +1696,35 @@ body.theme-light .about__visual:not(.about__visual--card) {
   color: var(--gray); transition: color 0.25s var(--ease);
 }
 .post__back:hover { color: var(--white); }
+
+/* Blog figures (inline SVG diagrams) + tables */
+.post__figure {
+  margin: clamp(32px, 4vw, 50px) 0;
+  padding: clamp(20px, 3vw, 30px);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(17, 17, 17, 0.012);
+}
+.post__figure svg { display: block; width: 100%; height: auto; }
+.post__fig-cap {
+  margin-top: 16px;
+  font-family: var(--font-mono);
+  font-size: 12px; letter-spacing: 0.04em;
+  color: var(--gray); text-align: center; max-width: none;
+}
+.legal__body .table-wrap { overflow-x: auto; margin: clamp(26px, 3vw, 40px) 0; }
+.legal__body table {
+  width: 100%; border-collapse: collapse; font-size: 15.5px; min-width: 480px;
+}
+.legal__body th, .legal__body td {
+  text-align: left; padding: 13px 16px; vertical-align: top;
+  border-bottom: 1px solid var(--line); color: var(--gray); line-height: 1.5;
+  max-width: none;
+}
+.legal__body thead th {
+  color: var(--white); font-weight: 600; font-size: 12.5px;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.26);
+}
+.legal__body tbody tr:last-child td { border-bottom: none; }
+.legal__body td:first-child { color: var(--white); font-weight: 500; }

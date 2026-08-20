@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="/css/style.css?v=28" />
+  <link rel="stylesheet" href="/css/style.css?v=29" />
 
   <!-- Structured data: BlogPosting -->
   <script type="application/ld+json">
@@ -96,6 +96,41 @@
 
         <p>None of these are technical problems. They're ownership problems wearing technical costumes.</p>
 
+        <figure class="post__figure">
+          <svg viewBox="0 0 720 224" role="img" aria-labelledby="figA-t figA-d" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono', ui-monospace, monospace">
+            <title id="figA-t">Fragmented delivery versus one team</title>
+            <desc id="figA-d">In fragmented delivery, separate Strategy, Design, Build and Run teams hand work off, and ownership leaks at every seam. One team spans architecture through launch with no handoffs.</desc>
+            <text x="2" y="16" font-size="12" letter-spacing="1.5" fill="#686868">FRAGMENTED DELIVERY</text>
+            <g fill="none" stroke="#111111" stroke-opacity="0.30">
+              <rect x="0"   y="28" width="165" height="52" rx="10"/>
+              <rect x="185" y="28" width="165" height="52" rx="10"/>
+              <rect x="370" y="28" width="165" height="52" rx="10"/>
+              <rect x="555" y="28" width="165" height="52" rx="10"/>
+            </g>
+            <g font-size="13" letter-spacing="1" fill="#111111" text-anchor="middle">
+              <text x="82.5"  y="59">STRATEGY</text>
+              <text x="267.5" y="59">DESIGN</text>
+              <text x="452.5" y="59">BUILD</text>
+              <text x="637.5" y="59">RUN</text>
+            </g>
+            <g>
+              <circle cx="175" cy="54" r="8" fill="#F5C53A"/>
+              <circle cx="360" cy="54" r="8" fill="#F5C53A"/>
+              <circle cx="545" cy="54" r="8" fill="#F5C53A"/>
+              <g font-size="11" font-weight="700" fill="#111111" text-anchor="middle">
+                <text x="175" y="58">×</text>
+                <text x="360" y="58">×</text>
+                <text x="545" y="58">×</text>
+              </g>
+            </g>
+            <text x="360" y="116" font-size="12.5" fill="#686868" text-anchor="middle">Context &amp; accountability leak at every seam ( × )</text>
+            <text x="2" y="150" font-size="12" letter-spacing="1.5" fill="#686868">ONE TEAM · TOTAL OWNERSHIP</text>
+            <rect x="0" y="162" width="720" height="52" rx="10" fill="#F5C53A"/>
+            <text x="360" y="193" font-size="14" font-weight="700" letter-spacing="2" fill="#111111" text-anchor="middle">ARCHITECTURE &#8594; LAUNCH &nbsp;—&nbsp; NO HANDOFFS</text>
+          </svg>
+          <figcaption class="post__fig-cap">Every seam between teams is a place ownership can leak. Remove the seams, and most of the failure modes disappear.</figcaption>
+        </figure>
+
         <blockquote>Most technology fails not because of the technology, but because nobody took real ownership.</blockquote>
 
         <h2>What "ownership" actually means</h2>
@@ -134,6 +169,40 @@
         </ul>
 
         <p>The answers tell you almost everything. Vendors optimized for volume will describe process and handoffs. Vendors optimized for outcomes will describe a team and a throat to choke.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>What to probe</th>
+                <th>Volume-optimized vendor</th>
+                <th>Outcome-optimized vendor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Scoping vs. building</td>
+                <td>Different teams; work is handed off</td>
+                <td>The same team, start to finish</td>
+              </tr>
+              <tr>
+                <td>The boundaries (security, data migration, edge cases)</td>
+                <td>“Out of scope” until they break</td>
+                <td>Owned and closed early</td>
+              </tr>
+              <tr>
+                <td>A production incident at 2 a.m.</td>
+                <td>Escalated through support tiers</td>
+                <td>One team that knows the whole system</td>
+              </tr>
+              <tr>
+                <td>Layers between your problem and the solution</td>
+                <td>Account managers, PMs, subcontractors</td>
+                <td>One team, direct</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <p>Technology keeps getting better. The tools are extraordinary and getting more so. But tools don't own outcomes — people do. Get the ownership right, and most of the technical problems you were bracing for never become problems at all.</p>
       </div>
