@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="/css/style.css?v=29" />
+  <link rel="stylesheet" href="/css/style.css?v=30" />
 
   <script type="application/ld+json">
   {
@@ -66,6 +66,7 @@
 
   <main class="legal">
     <div class="container legal__inner">
+      <div class="post__watermark" aria-hidden="true"><img src="/assets/datreon-icon.png" alt="" /></div>
       <p class="eyebrow">Legacy Modernization</p>
       <h1 class="legal__title">Strangler Fig, Not Big Bang: Modernizing Without Betting the Company</h1>
       <div class="post__meta">
@@ -99,7 +100,7 @@
         <figure class="post__figure">
           <svg viewBox="0 0 720 320" role="img" aria-labelledby="figD-t figD-d" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono', ui-monospace, monospace">
             <title id="figD-t">The strangler fig migration in three phases</title>
-            <desc id="figD-d">Behind a stable facade, the legacy system (gray) is replaced by new code (gold) one capability at a time, until nothing runs on legacy.</desc>
+            <desc id="figD-d">Behind a stable facade, the legacy system (gray) is replaced by new code (teal) one capability at a time, until nothing runs on legacy.</desc>
             <text x="2" y="16" font-size="12" letter-spacing="1.5" fill="#686868">A STABLE FACADE STAYS IN FRONT THE WHOLE TIME</text>
             <rect x="0" y="26" width="720" height="34" rx="8" fill="none" stroke="#111111" stroke-opacity="0.4"/>
             <text x="360" y="48" font-size="12.5" fill="#111111" text-anchor="middle">FACADE — users see one stable system throughout</text>
@@ -112,17 +113,17 @@
 
               <!-- Phase 2: part new, part legacy -->
               <rect x="300" y="92" width="120" height="176" rx="8" fill="#111111" fill-opacity="0.10" stroke="#111111" stroke-opacity="0.30"/>
-              <rect x="300" y="171" width="120" height="97" rx="8" fill="#F5C53A"/>
+              <rect x="300" y="171" width="120" height="97" rx="8" fill="#0F9C8B"/>
               <text x="360" y="128" font-size="11.5" fill="#111111" text-anchor="middle">legacy</text>
-              <text x="360" y="226" font-size="11.5" fill="#111111" text-anchor="middle">new</text>
+              <text x="360" y="226" font-size="11.5" fill="#FFFFFF" text-anchor="middle">new</text>
 
               <!-- Phase 3: all new -->
-              <rect x="530" y="92" width="120" height="176" rx="8" fill="#F5C53A"/>
-              <text x="590" y="185" font-size="12.5" fill="#111111" text-anchor="middle">NEW</text>
+              <rect x="530" y="92" width="120" height="176" rx="8" fill="#0F9C8B"/>
+              <text x="590" y="185" font-size="12.5" fill="#FFFFFF" text-anchor="middle">NEW</text>
             </g>
 
             <!-- arrows -->
-            <g fill="#686868" font-size="20">
+            <g fill="#2F7FD1" font-size="20">
               <text x="238" y="187" text-anchor="middle">&#8594;</text>
               <text x="468" y="187" text-anchor="middle">&#8594;</text>
             </g>
@@ -134,7 +135,7 @@
               <text x="590" y="292">PHASE 3</text>
             </g>
           </svg>
-          <figcaption class="post__fig-cap">Gold is new code, gray is legacy. The facade never changes, so users are never disrupted while the system is replaced underneath them.</figcaption>
+          <figcaption class="post__fig-cap">Teal is new code, gray is legacy. The facade never changes, so users are never disrupted while the system is replaced underneath them.</figcaption>
         </figure>
 
         <p>Each migrated capability ships and delivers value on its own. If a slice goes wrong, you roll back that one slice — not the whole program. And because the old and new run side by side, you can compare their outputs on real traffic before you trust the new path.</p>

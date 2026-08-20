@@ -21,6 +21,7 @@ You are running the scheduled Datreon blog routine. Produce **one** new, on-bran
 - **Copy the structure of an existing post exactly**: open `blog/ai-pilots-that-ship.html` and use it as the template. Keep the same `<head>` (fonts, `/css/style.css?v=29`, favicon), `legal-nav` header, and `footer`. Use **root-absolute paths** (`/assets/...`, `/css/...`) because the file is in the `blog/` subdirectory.
 - Update per-post: `<title>`, meta description, canonical (`https://datreon.tech/blog/<slug>`), all OG/Twitter tags, `article:published_time` (today), and the **BlogPosting JSON-LD** (`headline`, `description`, `datePublished`/`dateModified` = today, `url`).
 - Body structure (reuse these exact classes):
+  - **First**, directly inside `<div class="container legal__inner">` (before the eyebrow), include the header watermark exactly: `<div class="post__watermark" aria-hidden="true"><img src="/assets/datreon-icon.png" alt="" /></div>`. This is the original monogram at low opacity — **never recolor it**.
   - `<p class="eyebrow">` = the item's `category`.
   - `<h1 class="legal__title">` = the title (may shorten slightly for the H1).
   - `<div class="post__meta">` with `Datreon · <Month D, YYYY> · <N> min read`.
@@ -30,7 +31,8 @@ You are running the scheduled Datreon blog routine. Produce **one** new, on-bran
 
 ## 4. The visuals (mandatory)
 Follow the item's `visual` idea. Use the site palette and put each diagram in a `<figure class="post__figure">` with a `<figcaption class="post__fig-cap">`, and each table in `<div class="table-wrap"><table>…`.
-- **Palette:** ink text `#111111`; secondary/gray `#686868`; the ONE accent is gold `#F5C53A` (use it to highlight the "good"/target element); hairline strokes `stroke="#111111" stroke-opacity="0.3"`.
+- **Palette — diagrams are MULTI-COLOR.** Foundation: ink text `#111111`, gray `#686868`, hairline `stroke="#111111" stroke-opacity="0.3"`. Draw on the full accent set, using color meaningfully (group/step/status), not randomly: gold `#F5C53A`, indigo `#5B54E0`, teal `#0F9C8B`, azure `#2F7FD1`, coral `#ED6A4C`, navy `#2A3F73`. On a saturated fill use white text `#FFFFFF`; on gold use ink `#111111`. Lean on the post's pillar color where natural (AI=indigo, Modernization=teal, Cloud=azure, Data=coral, Government=navy, Perspective=gold). These colors live INSIDE the diagrams only.
+- **Do NOT** add colored borders, colored category tags, or colored chrome around the post/cards — posts stay neutral (ink + off-white). Color belongs in the diagrams. **Never recolor the logo or the watermark** — always the original mark.
 - **SVG rules:** include `viewBox`, `role="img"`, and `<title>`/`<desc>` for a11y; `font-family="'JetBrains Mono', ui-monospace, monospace"` on labels; keep it to clean rects/lines/circles/text (no external refs). The CSS already sizes it (`.post__figure svg { width:100%; height:auto }`), so design at a fixed viewBox (~700–720 wide) and let it scale. Balance every tag.
 - **Table:** use `<thead>`/`<tbody>`; first column is the row label. Styling is already in the design system (`.legal__body table`).
 

@@ -1728,3 +1728,21 @@ body.theme-light .about__visual:not(.about__visual--card) {
 }
 .legal__body tbody tr:last-child td { border-bottom: none; }
 .legal__body td:first-child { color: var(--white); font-weight: 500; }
+
+/* Blog accent palette — used INSIDE post diagrams only (never as post borders/tags) */
+:root {
+  --ac-gold: #F5C53A; --ac-indigo: #5B54E0; --ac-teal: #0F9C8B;
+  --ac-azure: #2F7FD1; --ac-coral: #ED6A4C; --ac-navy: #2A3F73;
+}
+
+/* Original monogram as a subtle, UNCOLORED watermark in post headers */
+.legal__inner { position: relative; }
+.legal__inner > :not(.post__watermark) { position: relative; z-index: 1; }
+.post__watermark {
+  position: absolute; top: -14px; right: 0; width: min(280px, 44vw);
+  opacity: 0.06; z-index: 0; pointer-events: none; user-select: none;
+}
+.post__watermark img { display: block; width: 100%; height: auto; }
+@media (max-width: 768px) {
+  .post__watermark { width: 152px; opacity: 0.05; top: -6px; }
+}
