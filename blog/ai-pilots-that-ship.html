@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Pilots That Ship: Why Most Stall — and How to Be the Exception · Datreon</title>
+  <meta name="description" content="Most enterprise AI pilots never reach production. The reason is rarely the model — it's the gap between a demo and a system. Here's how to pick the right first use case and build for production from day one." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#F2F2F0" />
+  <link rel="canonical" href="https://datreon.tech/blog/ai-pilots-that-ship" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/assets/datreon-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Datreon" />
+  <meta property="og:title" content="AI Pilots That Ship: Why Most Stall — and How to Be the Exception" />
+  <meta property="og:description" content="Most enterprise AI pilots never reach production. The reason is rarely the model — it's the gap between a demo and a system." />
+  <meta property="og:url" content="https://datreon.tech/blog/ai-pilots-that-ship" />
+  <meta property="og:image" content="https://datreon.tech/assets/og-image.png" />
+  <meta property="article:published_time" content="2026-06-20" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI Pilots That Ship: Why Most Stall — and How to Be the Exception" />
+  <meta name="twitter:image" content="https://datreon.tech/assets/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css?v=29" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "AI Pilots That Ship: Why Most Stall — and How to Be the Exception",
+    "description": "Most enterprise AI pilots never reach production. The reason is rarely the model — it's the gap between a demo and a system.",
+    "datePublished": "2026-06-20",
+    "dateModified": "2026-06-20",
+    "url": "https://datreon.tech/blog/ai-pilots-that-ship",
+    "image": "https://datreon.tech/assets/og-image.png",
+    "author": { "@type": "Organization", "name": "Datreon", "url": "https://datreon.tech/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Datreon",
+      "logo": { "@type": "ImageObject", "url": "https://datreon.tech/assets/datreon-icon.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://datreon.tech/blog/ai-pilots-that-ship" }
+  }
+  </script>
+</head>
+<body class="theme-light">
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="legal-nav">
+    <div class="container legal-nav__inner">
+      <a href="/" class="nav__brand">
+        <img class="nav__mark" src="/assets/datreon-icon.png" alt="" />
+        <img class="nav__wordmark" src="/assets/datreon-wordmark.png" alt="Datreon" />
+      </a>
+      <a href="/blog" class="legal-nav__back"><span aria-hidden="true">←</span> All insights</a>
+    </div>
+  </header>
+
+  <main class="legal">
+    <div class="container legal__inner">
+      <p class="eyebrow">Artificial Intelligence</p>
+      <h1 class="legal__title">AI Pilots That Ship: Why Most Stall — and How to Be the Exception</h1>
+      <div class="post__meta">
+        <span class="post__cat">Datreon</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>June 20, 2026</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>7 min read</span>
+      </div>
+
+      <p class="legal__lead">Almost every organization has run an AI pilot by now. Far fewer have an AI system running in production, earning its keep. The gap between those two things is where most of the money and momentum quietly disappears — and it's rarely the model's fault.</p>
+
+      <div class="legal__body">
+        <p>The demo goes great. Someone wires up a language model, feeds it a few real examples, and the room lights up: it drafts the report, answers the question, classifies the document. Budget gets approved. And then, months later, the pilot is still a pilot — impressive in a meeting, absent from anyone's actual workflow.</p>
+
+        <p>This is the most common AI outcome in the enterprise, and it's remarkably consistent. The technology worked. The pilot still failed. Understanding why is the difference between spending money on AI and getting a return on it.</p>
+
+        <h2>A demo is not a system</h2>
+
+        <p>A demo has to convince a human for five minutes. A system has to be correct, safe, and maintainable for years, on inputs nobody previewed. Almost everything that makes AI hard lives in that gap — and none of it shows up in the demo.</p>
+
+        <figure class="post__figure">
+          <svg viewBox="0 0 720 262" role="img" aria-labelledby="figB-t figB-d" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono', ui-monospace, monospace">
+            <title id="figB-t">The gap between a demo and a production system</title>
+            <desc id="figB-d">A demo is a model plus a prompt. A production system adds data pipeline, evaluation, guardrails, human review, monitoring, and integration.</desc>
+            <text x="2" y="16" font-size="12" letter-spacing="1.5" fill="#686868">THE DEMO</text>
+            <g fill="none" stroke="#111111" stroke-opacity="0.30">
+              <rect x="0" y="28" width="150" height="46" rx="9"/>
+              <rect x="165" y="28" width="150" height="46" rx="9"/>
+            </g>
+            <g font-size="12.5" fill="#111111" text-anchor="middle">
+              <text x="75" y="55">A model</text>
+              <text x="240" y="55">A prompt</text>
+            </g>
+            <text x="2" y="112" font-size="12" letter-spacing="1.5" fill="#686868">THE PRODUCTION SYSTEM</text>
+            <g font-size="12" fill="#111111" text-anchor="middle">
+              <g fill="#F5C53A" stroke="none">
+                <rect x="0"   y="124" width="132" height="44" rx="9"/>
+                <rect x="147" y="124" width="132" height="44" rx="9"/>
+                <rect x="294" y="124" width="132" height="44" rx="9"/>
+                <rect x="441" y="124" width="132" height="44" rx="9"/>
+                <rect x="588" y="124" width="132" height="44" rx="9"/>
+                <rect x="147" y="188" width="132" height="44" rx="9"/>
+                <rect x="294" y="188" width="132" height="44" rx="9"/>
+                <rect x="441" y="188" width="132" height="44" rx="9"/>
+              </g>
+              <text x="66"  y="151">Data pipeline</text>
+              <text x="213" y="151">Retrieval</text>
+              <text x="360" y="151">Model + prompt</text>
+              <text x="507" y="151">Guardrails</text>
+              <text x="654" y="151">Evaluation</text>
+              <text x="213" y="215">Human review</text>
+              <text x="360" y="215">Monitoring</text>
+              <text x="507" y="215">Integration</text>
+            </g>
+          </svg>
+          <figcaption class="post__fig-cap">The model is one box. The other eight are why pilots stall before production.</figcaption>
+        </figure>
+
+        <p>When a pilot dies, the autopsy almost always finds one of these missing pieces: there was no way to measure whether it was actually right, no guardrail for when it was confidently wrong, no path into the tools people already use, or no plan for who owns it when it drifts.</p>
+
+        <h2>Pick the right first use case</h2>
+
+        <p>The second killer is choosing the wrong place to start. Teams tend to pick the <em>most exciting</em> use case, which is usually also the hardest and highest-stakes. The right first project is the opposite: high enough value to matter, feasible enough to actually finish. Map your candidates before you commit.</p>
+
+        <figure class="post__figure">
+          <svg viewBox="0 0 560 430" role="img" aria-labelledby="figC-t figC-d" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono', ui-monospace, monospace">
+            <title id="figC-t">Value versus feasibility matrix for AI use cases</title>
+            <desc id="figC-d">Plot AI use cases by business value and feasibility. Start with high-value, high-feasibility projects.</desc>
+            <!-- quadrant fills -->
+            <rect x="300" y="40" width="230" height="165" rx="6" fill="#F5C53A"/>
+            <rect x="70"  y="40" width="222" height="165" rx="6" fill="#111111" fill-opacity="0.04"/>
+            <rect x="300" y="213" width="230" height="165" rx="6" fill="#111111" fill-opacity="0.04"/>
+            <rect x="70"  y="213" width="222" height="165" rx="6" fill="#111111" fill-opacity="0.04"/>
+            <!-- axes -->
+            <g stroke="#111111" stroke-opacity="0.45" stroke-width="1.4">
+              <line x1="70" y1="40" x2="70" y2="378"/>
+              <line x1="70" y1="378" x2="530" y2="378"/>
+            </g>
+            <!-- quadrant labels -->
+            <g text-anchor="middle">
+              <text x="415" y="128" font-size="15" font-weight="700" fill="#111111">START HERE</text>
+              <text x="181" y="128" font-size="13" fill="#686868">Roadmap</text>
+              <text x="415" y="301" font-size="13" fill="#686868">Quick wins</text>
+              <text x="181" y="301" font-size="13" fill="#686868">Avoid</text>
+            </g>
+            <!-- axis titles -->
+            <text x="300" y="410" font-size="12" letter-spacing="1.5" fill="#686868" text-anchor="middle">FEASIBILITY  &#8594;</text>
+            <text x="26" y="209" font-size="12" letter-spacing="1.5" fill="#686868" text-anchor="middle" transform="rotate(-90 26 209)">VALUE  &#8594;</text>
+          </svg>
+          <figcaption class="post__fig-cap">Start in the gold quadrant — real value, genuinely achievable. Save the moonshots for after you've shipped one.</figcaption>
+        </figure>
+
+        <p>Good first candidates share a shape: a narrow, well-defined task; a tolerance for human review in the loop; clear data you already have; and a measurable definition of "right." Document classification, drafting from templates, triaging inbound requests, summarizing long records — unglamorous, high-leverage, and shippable.</p>
+
+        <h2>Build the thin slice all the way to production</h2>
+
+        <p>The teams that succeed don't build a bigger pilot. They build the <em>smallest</em> possible version — one use case, one workflow — and take it end to end into production, guardrails and monitoring included. A narrow thing that's actually live beats a broad thing that's forever "almost ready." Once one slice is running and trusted, the second is far easier, because the hard infrastructure already exists.</p>
+
+        <h2>What "AI readiness" actually requires</h2>
+
+        <p>"Are we ready for AI?" is really several concrete questions. Here's the honest checklist:</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Dimension</th>
+                <th>Not ready</th>
+                <th>Ready to ship</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Data</td>
+                <td>Scattered, undocumented, hard to access</td>
+                <td>Reachable, reasonably clean, permissioned</td>
+              </tr>
+              <tr>
+                <td>Success metric</td>
+                <td>“It should feel smart”</td>
+                <td>A measurable, testable definition of correct</td>
+              </tr>
+              <tr>
+                <td>Failure handling</td>
+                <td>Assumes the model is always right</td>
+                <td>Guardrails + human review where stakes are high</td>
+              </tr>
+              <tr>
+                <td>Integration</td>
+                <td>A standalone demo app</td>
+                <td>Lives inside the tools people already use</td>
+              </tr>
+              <tr>
+                <td>Ownership</td>
+                <td>Nobody owns it after launch</td>
+                <td>A team accountable for accuracy and drift</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Notice that only one row is about the model. AI projects succeed or fail on the boring dimensions around it — the data, the metric, the guardrails, the integration, the owner. That's good news: those are all things you can engineer.</p>
+
+        <p>The organizations pulling real value from AI aren't using better models than everyone else. They're picking a sharper first problem and building the unglamorous system around the model that turns a good demo into something people actually rely on.</p>
+      </div>
+
+      <div class="post__cta">
+        <h2>Have an AI pilot that's stuck at "almost"?</h2>
+        <p>Datreon helps teams pick the right first use case and build AI into production — data, guardrails, integration, and all.</p>
+        <a href="/#contact" class="btn btn--fill btn--lg">Start a Conversation</a>
+      </div>
+
+      <a href="/blog" class="post__back"><span aria-hidden="true">←</span> All insights</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <div class="nav__brand">
+          <img class="nav__mark" src="/assets/datreon-icon.png" alt="" />
+          <img class="nav__wordmark" src="/assets/datreon-wordmark.png" alt="Datreon" />
+        </div>
+        <p class="footer__tagline">Engineering Intelligence. Delivering Impact.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="/#services">Services</a>
+        <a href="/#work">Work</a>
+        <a href="/#about">About</a>
+        <a href="/blog">Insights</a>
+        <a href="/#contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://www.linkedin.com/company/datreon" aria-label="Datreon on LinkedIn" rel="noopener" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v14.8H.2V8zm7.6 0h4.4v2h.06c.61-1.16 2.11-2.38 4.35-2.38 4.65 0 5.51 3.06 5.51 7.04v8.14h-4.6v-7.2c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8v7.33H7.8V8z"/></svg>
+        </a>
+        <span class="footer__domain">datreon.tech</span>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Datreon · Chesapeake, Virginia</p>
+    </div>
+  </footer>
+
+</body>
+</html>
