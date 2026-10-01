@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LLMs Behind the Firewall: Integrating AI Without Leaking Your Data · Datreon</title>
+  <meta name="description" content="You don't have to choose between using AI and protecting sensitive data. Here's how deployment options and data-handling patterns actually differ — and how to pick the right one for regulated or security-conscious work." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#F2F2F0" />
+  <link rel="canonical" href="https://datreon.tech/blog/llms-behind-the-firewall" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/assets/datreon-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Datreon" />
+  <meta property="og:title" content="LLMs Behind the Firewall: Integrating AI Without Leaking Your Data" />
+  <meta property="og:description" content="You don't have to choose between using AI and protecting sensitive data. Here's how deployment options and data-handling patterns actually differ." />
+  <meta property="og:url" content="https://datreon.tech/blog/llms-behind-the-firewall" />
+  <meta property="og:image" content="https://datreon.tech/assets/og-image.png" />
+  <meta property="article:published_time" content="2026-09-25" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="LLMs Behind the Firewall: Integrating AI Without Leaking Your Data" />
+  <meta name="twitter:image" content="https://datreon.tech/assets/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css?v=30" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "LLMs Behind the Firewall: Integrating AI Without Leaking Your Data",
+    "description": "You don't have to choose between using AI and protecting sensitive data. Here's how deployment options and data-handling patterns actually differ — and how to pick the right one for regulated or security-conscious work.",
+    "datePublished": "2026-09-25",
+    "dateModified": "2026-09-25",
+    "url": "https://datreon.tech/blog/llms-behind-the-firewall",
+    "image": "https://datreon.tech/assets/og-image.png",
+    "author": { "@type": "Organization", "name": "Datreon", "url": "https://datreon.tech/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Datreon",
+      "logo": { "@type": "ImageObject", "url": "https://datreon.tech/assets/datreon-icon.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://datreon.tech/blog/llms-behind-the-firewall" }
+  }
+  </script>
+</head>
+<body class="theme-light">
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="legal-nav">
+    <div class="container legal-nav__inner">
+      <a href="/" class="nav__brand">
+        <img class="nav__mark" src="/assets/datreon-icon.png" alt="" />
+        <img class="nav__wordmark" src="/assets/datreon-wordmark.png" alt="Datreon" />
+      </a>
+      <a href="/blog" class="legal-nav__back"><span aria-hidden="true">←</span> All insights</a>
+    </div>
+  </header>
+
+  <main class="legal">
+    <div class="container legal__inner">
+      <div class="post__watermark" aria-hidden="true"><img src="/assets/datreon-icon.png" alt="" /></div>
+      <p class="eyebrow">Artificial Intelligence</p>
+      <h1 class="legal__title">LLMs Behind the Firewall: Integrating AI Without Leaking Your Data</h1>
+      <div class="post__meta">
+        <span class="post__cat">Datreon</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>September 25, 2026</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>6 min read</span>
+      </div>
+
+      <p class="legal__lead">Every security-conscious team asks the same question before they'll touch a language model: where does our data actually go? It's the right question, and it has a real answer — one that depends far more on how you deploy the model than on the model itself.</p>
+
+      <div class="legal__body">
+        <p>"We can't use AI, our data is sensitive" is one of the most common objections we hear, and it's usually said with more certainty than the facts support. Sensitive and regulated data can be used with large language models safely — but only if you understand the handful of deployment choices on the table, and pick the one that actually matches your risk tolerance instead of the one that was easiest to demo.</p>
+
+        <h2>The fear is real — and it's usually about the wrong layer</h2>
+
+        <p>The worry is legitimate. Paste a customer record, a medical note, or a contract into the wrong chat window, and it can end up stored, logged, or even used to train someone else's model. That risk is real for a default consumer AI tool. It is not an inherent property of language models — it's a property of a specific deployment with no controls around it.</p>
+
+        <p>The fix isn't avoiding AI. It's separating two questions that get conflated constantly: <em>can this model help with this task</em>, and <em>where does the data go while it does</em>. The first is usually easy to answer. The second is where the actual engineering work lives.</p>
+
+        <h2>Three ways data can flow — and only one of them should surprise you</h2>
+
+        <p>Almost every AI deployment reduces to one of three shapes. A hosted API call under a data-processing agreement that contractually forbids training on your inputs and typically strips logs after a short retention window. A private or VPC-hosted endpoint, where the same class of model runs on infrastructure that's logically isolated to your organization and never shares a multi-tenant boundary. Or a self-hosted open model, running entirely on infrastructure you control, where nothing about the request ever leaves your network at all.</p>
+
+        <figure class="post__figure">
+          <svg viewBox="0 0 720 300" role="img" aria-labelledby="fig1-t fig1-d" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono', ui-monospace, monospace">
+            <defs>
+              <marker id="arrowA" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#111111" fill-opacity="0.45"/></marker>
+              <marker id="arrowB" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#111111" fill-opacity="0.45"/></marker>
+            </defs>
+            <title id="fig1-t">Where your data goes: crossing a boundary versus staying inside it</title>
+            <desc id="fig1-d">Two data-flow shapes. In the first, a request from your systems crosses your security boundary to reach a shared public API and model. In the second, the request stays inside your boundary the entire time because the model runs on private or self-hosted infrastructure.</desc>
+
+            <text x="2" y="16" font-size="12" letter-spacing="1.5" fill="#686868">OPTION A — DATA LEAVES YOUR BOUNDARY</text>
+            <rect x="0" y="26" width="170" height="50" rx="9" fill="none" stroke="#111111" stroke-opacity="0.3"/>
+            <text x="85" y="56" font-size="12.5" fill="#111111" text-anchor="middle">Your systems</text>
+            <line x1="230" y1="8" x2="230" y2="90" stroke="#ED6A4C" stroke-width="1.6" stroke-dasharray="4 4"/>
+            <text x="230" y="100" font-size="10" fill="#ED6A4C" text-anchor="middle">YOUR BOUNDARY</text>
+            <line x1="170" y1="51" x2="318" y2="51" stroke="#111111" stroke-opacity="0.45" marker-end="url(#arrowA)"/>
+            <rect x="320" y="26" width="170" height="50" rx="9" fill="#ED6A4C"/>
+            <text x="405" y="56" font-size="12.5" fill="#FFFFFF" text-anchor="middle">Shared public API</text>
+            <line x1="490" y1="51" x2="538" y2="51" stroke="#111111" stroke-opacity="0.45" marker-end="url(#arrowB)"/>
+            <rect x="540" y="26" width="170" height="50" rx="9" fill="#ED6A4C" fill-opacity="0.8"/>
+            <text x="625" y="49" font-size="11" fill="#FFFFFF" text-anchor="middle">Vendor's model</text>
+            <text x="625" y="63" font-size="9.5" fill="#FFFFFF" text-anchor="middle">logging/training terms vary</text>
+
+            <text x="2" y="152" font-size="12" letter-spacing="1.5" fill="#686868">OPTION B — DATA STAYS INSIDE</text>
+            <rect x="0" y="162" width="710" height="110" rx="12" fill="none" stroke="#5B54E0" stroke-width="1.6"/>
+            <text x="16" y="180" font-size="10" fill="#5B54E0">YOUR BOUNDARY — VPC OR ON-PREM</text>
+            <rect x="20" y="197" width="210" height="50" rx="9" fill="none" stroke="#111111" stroke-opacity="0.3"/>
+            <text x="125" y="227" font-size="12.5" fill="#111111" text-anchor="middle">Your systems</text>
+            <line x1="230" y1="222" x2="328" y2="222" stroke="#111111" stroke-opacity="0.45" marker-end="url(#arrowA)"/>
+            <rect x="330" y="197" width="200" height="50" rx="9" fill="#5B54E0"/>
+            <text x="430" y="220" font-size="11.5" fill="#FFFFFF" text-anchor="middle">Private / self-hosted model</text>
+            <text x="430" y="234" font-size="9.5" fill="#FFFFFF" text-anchor="middle">nothing crosses the boundary</text>
+          </svg>
+          <figcaption class="post__fig-cap">Same task, two shapes. The difference that matters isn't the model — it's whether the request ever leaves your boundary.</figcaption>
+        </figure>
+
+        <p>None of these three is universally "the safe one." A hosted API with a solid data-processing agreement is entirely appropriate for plenty of sensitive work. A self-hosted model isn't automatically safer if nobody's patching it or watching who has access. The deployment model sets the outer boundary of your risk — the patterns you build on top of it determine what actually happens inside that boundary.</p>
+
+        <h2>The data-handling patterns that matter more than the vendor logo</h2>
+
+        <p>Once you've picked a deployment shape, four practices do most of the real work of keeping data safe:</p>
+
+        <ul>
+          <li><strong>Redact before you send.</strong> Strip or tokenize names, account numbers, and other direct identifiers before they ever reach the model, and rehydrate them afterward if needed. Most tasks don't need the model to see the raw identifier to do its job.</li>
+          <li><strong>Bound what the model can retrieve.</strong> If you're using retrieval to ground answers in your own documents, scope that retrieval to exactly what the requesting user or process is authorized to see — don't let a permissions gap in your search layer become a permissions gap in your AI feature.</li>
+          <li><strong>Get the no-training guarantee in writing.</strong> "We don't train on your data" is a contract term, not a marketing line. Confirm it's in the data-processing agreement, understand the retention window, and know what happens to logs.</li>
+          <li><strong>Log the interaction, not just the outcome.</strong> Keep an audit trail of what was sent, what came back, and who triggered it. When something goes wrong, you want to reconstruct exactly what the model saw.</li>
+        </ul>
+
+        <p>These four patterns apply regardless of which of the three deployment shapes you choose. Skip them, and even a fully self-hosted model can leak sensitive data through a sloppy retrieval index or an unredacted log file. Get them right, and a well-governed hosted API can be entirely appropriate for regulated data.</p>
+
+        <h2>How to actually choose</h2>
+
+        <p>The right deployment model is a function of three things: how sensitive the data really is, how much engineering capacity you have to operate infrastructure, and how much customization or fine-tuning you actually need. Here's how the three options compare on the dimensions that tend to decide it.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Dimension</th>
+                <th>Hosted API (with DPA)</th>
+                <th>Private cloud / VPC</th>
+                <th>Self-hosted open model</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Data control</td>
+                <td>Contractual — no training, bounded retention</td>
+                <td>High — isolated endpoint, your network boundary</td>
+                <td>Total — nothing leaves your infrastructure</td>
+              </tr>
+              <tr>
+                <td>Upfront cost</td>
+                <td>Low — pay per use, no infrastructure</td>
+                <td>Moderate — provisioning and setup work</td>
+                <td>High — GPUs, hosting, model selection</td>
+              </tr>
+              <tr>
+                <td>Ongoing effort</td>
+                <td>Low — vendor manages the model</td>
+                <td>Moderate — you manage access and scaling</td>
+                <td>High — patching, monitoring, upgrades, on you</td>
+              </tr>
+              <tr>
+                <td>Best fit</td>
+                <td>Most business data with a solid DPA in place</td>
+                <td>Regulated data needing network isolation</td>
+                <td>Highest-sensitivity data, or strict data residency rules</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Most organizations land on a private or VPC-hosted endpoint for anything genuinely sensitive, and a well-contracted hosted API for everything else — reserving full self-hosting for the narrow slice of work where the effort is actually justified by the sensitivity of the data or a hard residency requirement. Defaulting straight to self-hosting "to be safe" is a common overcorrection; it trades a solvable contractual and architectural problem for an ongoing operational one.</p>
+
+        <blockquote>The deployment model sets your outer boundary. Redaction, scoped retrieval, contract terms, and logging decide what actually happens inside it.</blockquote>
+
+        <h2>Start with the question, not the tool</h2>
+
+        <p>Before choosing a deployment model, be specific about what "sensitive" means for your data: is it regulated by a named standard, does it carry contractual confidentiality obligations, or would exposure trigger a breach notification? Each answer points toward a different spot on the spectrum above. Teams that skip this step tend to either overspend on infrastructure they didn't need, or underprotect data they should have isolated.</p>
+
+        <p>Used deliberately, LLMs are no more dangerous to sensitive data than any other system that processes it — a database, a SaaS tool, an analyst's inbox. The difference is that the deployment options and contract language for AI are newer, and fewer teams have been through the exercise of evaluating them yet. That's a gap in familiarity, not a gap in what's possible.</p>
+      </div>
+
+      <div class="post__cta">
+        <h2>Have sensitive data and an AI use case that keeps stalling on "is this safe"?</h2>
+        <p>Datreon helps teams pick the right deployment model, set the data-handling patterns around it, and ship AI that holds up to scrutiny.</p>
+        <a href="/#contact" class="btn btn--fill btn--lg">Start a Conversation</a>
+      </div>
+
+      <a href="/blog" class="post__back"><span aria-hidden="true">←</span> All insights</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <div class="nav__brand">
+          <img class="nav__mark" src="/assets/datreon-icon.png" alt="" />
+          <img class="nav__wordmark" src="/assets/datreon-wordmark.png" alt="Datreon" />
+        </div>
+        <p class="footer__tagline">Engineering Intelligence. Delivering Impact.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="/#services">Services</a>
+        <a href="/#work">Work</a>
+        <a href="/#about">About</a>
+        <a href="/blog">Insights</a>
+        <a href="/#contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://www.linkedin.com/company/datreon" aria-label="Datreon on LinkedIn" rel="noopener" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v14.8H.2V8zm7.6 0h4.4v2h.06c.61-1.16 2.11-2.38 4.35-2.38 4.65 0 5.51 3.06 5.51 7.04v8.14h-4.6v-7.2c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8v7.33H7.8V8z"/></svg>
+        </a>
+        <span class="footer__domain">datreon.tech</span>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Datreon · Chesapeake, Virginia</p>
+    </div>
+  </footer>
+
+</body>
+</html>
