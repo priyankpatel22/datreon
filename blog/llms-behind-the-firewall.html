@@ -166,6 +166,10 @@
 
         <p>Three factors settle it in practice: how sensitive the data actually is (a public FAQ bot and a claims-processing system don't belong on the same deployment), how much your own team can realistically operate, and whether latency or volume push you toward infrastructure you control directly. Most organizations land on a private or VPC-hosted model for anything touching regulated or proprietary data, and reserve a hosted API for genuinely low-sensitivity work.</p>
 
+        <p>It's worth separating the question by workload rather than deciding once for the whole organization. A customer-facing chatbot answering questions from a public knowledge base carries very different risk than an internal tool summarizing contracts or medical records. Many teams end up running more than one deployment model at once — a hosted API for the low-stakes, high-volume work, and a private or self-hosted model reserved for anything that touches regulated or proprietary data. That split is normal, not a sign the strategy is unfinished.</p>
+
+        <p>It also pays to revisit the decision as the workload matures. A proof of concept built on a hosted API to move fast can graduate to a private deployment once it proves out and starts touching real customer data — the integration code barely changes, because the model's interface looks the same regardless of where it's running. What changes is everything around it: the network path, the contract, and who's accountable for what happens if something goes wrong.</p>
+
         <div class="table-wrap">
           <table>
             <thead>
