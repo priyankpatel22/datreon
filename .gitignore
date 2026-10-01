@@ -4,7 +4,10 @@ Thumbs.db
 *.log
 
 # Local Claude Code config (not for the public repo)
-.claude/
+# ...except the blog-routine ops files, which the scheduled cloud routine reads.
+.claude/*
+!.claude/blog-queue.json
+!.claude/blog-routine.md
 
 # Node (if tooling is added later)
 node_modules/
@@ -15,3 +18,6 @@ node_modules/
 !.dev.vars.example
 .env*
 !.env.example
+
+# Local research material — do NOT publish to the live site
+govcon-transcripts/
