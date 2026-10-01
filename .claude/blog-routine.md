@@ -8,8 +8,10 @@ You are running the scheduled Datreon blog routine. Produce **one** new, on-bran
 - **Visuals are mandatory** (owner preference): every post includes at least **one inline SVG diagram** AND at least **one HTML table**. No external images or scripts (CSP-safe).
 
 ## 1. Pick the topic
-- Read `.claude/blog-queue.json`. Choose the **first** item with `"status": "pending"`.
-- If none are pending, stop and report: "Blog queue is empty — add topics to .claude/blog-queue.json." Do not invent a topic.
+- Read `.claude/blog-queue.json`.
+- **Skip topics already awaiting review.** A topic is only marked `published` once its review branch is merged, so a pending topic may already have a draft waiting. Run `git fetch origin --prune` and `git branch -r --list 'origin/blog/auto-*'`; if any branch name ends in `-<slug>`, that topic is awaiting review — skip it.
+- Choose the **first** item with `"status": "pending"` that is NOT awaiting review.
+- If none are pending, stop and report: "Blog queue is empty — add topics to .claude/blog-queue.json." If pending topics exist but all are awaiting review, stop and report: "All pending topics already have review branches — merge or close them first." Do not invent a topic, and never write a second draft of a topic that already has a branch.
 - Note its `slug`, `title`, `category`, `angle`, `visual`.
 
 ## 2. Branch

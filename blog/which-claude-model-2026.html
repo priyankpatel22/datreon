@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Which Claude Model Should You Use? Haiku, Sonnet, Opus and Fable Compared · Datreon</title>
+  <meta name="description" content="Anthropic now ships a Claude lineup, not a single model — and the price gap from cheapest to most capable is 10×. A practical guide to Haiku 4.5, Sonnet 5.5, Opus 5.5 and Fable 5.1, and how to combine them." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#F2F2F0" />
+  <link rel="canonical" href="https://datreon.tech/blog/which-claude-model-2026" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/assets/datreon-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Datreon" />
+  <meta property="og:title" content="Which Claude Model Should You Use? Haiku, Sonnet, Opus and Fable Compared" />
+  <meta property="og:description" content="A practical guide to the 2026 Claude lineup — what each model is best at, what it costs, and how to combine them." />
+  <meta property="og:url" content="https://datreon.tech/blog/which-claude-model-2026" />
+  <meta property="og:image" content="https://datreon.tech/assets/og-image.png" />
+  <meta property="article:published_time" content="2026-10-01" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Which Claude Model Should You Use? Haiku, Sonnet, Opus and Fable Compared" />
+  <meta name="twitter:image" content="https://datreon.tech/assets/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css?v=30" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Which Claude Model Should You Use? Haiku, Sonnet, Opus and Fable Compared",
+    "description": "A practical guide to the 2026 Claude lineup — what each model is best at, what it costs, and how to combine them.",
+    "datePublished": "2026-10-01",
+    "dateModified": "2026-10-01",
+    "url": "https://datreon.tech/blog/which-claude-model-2026",
+    "image": "https://datreon.tech/assets/og-image.png",
+    "author": { "@type": "Organization", "name": "Datreon", "url": "https://datreon.tech/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Datreon",
+      "logo": { "@type": "ImageObject", "url": "https://datreon.tech/assets/datreon-icon.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://datreon.tech/blog/which-claude-model-2026" }
+  }
+  </script>
+</head>
+<body class="theme-light">
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="legal-nav">
+    <div class="container legal-nav__inner">
+      <a href="/" class="nav__brand">
+        <img class="nav__mark" src="/assets/datreon-icon.png" alt="" />
+        <img class="nav__wordmark" src="/assets/datreon-wordmark.png" alt="Datreon" />
+      </a>
+      <a href="/blog" class="legal-nav__back"><span aria-hidden="true">←</span> All insights</a>
+    </div>
+  </header>
+
+  <main class="legal">
+    <div class="container legal__inner">
+      <div class="post__watermark" aria-hidden="true"><img src="/assets/datreon-icon.png" alt="" /></div>
+      <p class="eyebrow">Artificial Intelligence</p>
+      <h1 class="legal__title">Which Claude Model Should You Use? A Practical Guide to the 2026 Lineup</h1>
+      <div class="post__meta">
+        <span class="post__cat">Datreon</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>October 1, 2026</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>7 min read</span>
+      </div>
+
+      <p class="legal__lead">Anthropic no longer ships “Claude” as one model. It ships a lineup — and the price gap between the cheapest and the most capable option is 10×. Choosing well is one of the simplest ways to make an AI project faster, cheaper, and better at the same time.</p>
+
+      <div class="legal__body">
+        <p>As of October 2026, the current generation spans four generally available models — <strong>Haiku 4.5, Sonnet 5.5, Opus 5.5 and Fable 5.1</strong> — plus <strong>Mythos 5.1</strong>, which is offered only through a restricted access program. They share a family resemblance, but they're built for very different jobs.</p>
+
+        <h2>The lineup at a glance</h2>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Best for</th>
+                <th>Context</th>
+                <th>API price (input / output per 1M tokens)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Haiku 4.5</td><td>High-volume, latency-sensitive tasks</td><td>200K</td><td>$1 / $5</td></tr>
+              <tr><td>Sonnet 5.5</td><td>Everyday coding, agents and business workflows</td><td>1M</td><td>$2 / $10</td></tr>
+              <tr><td>Opus 5.5</td><td>Complex coding, deep analysis, demanding agents</td><td>1M</td><td>$4 / $20</td></tr>
+              <tr><td>Fable 5.1</td><td>The hardest reasoning and long-horizon autonomous work</td><td>1M</td><td>$10 / $50</td></tr>
+              <tr><td>Mythos 5.1</td><td>Restricted access program — not generally available</td><td>1M</td><td>$10 / $50</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Prices are Anthropic's first-party API list prices; Claude on cloud marketplaces is billed separately and can differ.</p>
+
+        <figure class="post__figure">
+          <svg viewBox="0 0 720 340" role="img" aria-labelledby="cm1-t cm1-d" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono', ui-monospace, monospace">
+            <title id="cm1-t">Claude models positioned by capability and price</title>
+            <desc id="cm1-d">Haiku 4.5 is the lowest-cost option, followed by Sonnet 5.5, Opus 5.5 and Fable 5.1. Each step up offers more capability at a higher price per token.</desc>
+            <g stroke="#111111" stroke-opacity="0.35" stroke-width="1.2">
+              <line x1="80" y1="24" x2="80" y2="290"/>
+              <line x1="80" y1="290" x2="712" y2="290"/>
+            </g>
+            <polyline points="170,235 330,180 490,125 650,70" fill="none" stroke="#111111" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="5 6"/>
+            <g font-size="13" font-weight="700" text-anchor="middle">
+              <rect x="110" y="215" width="120" height="40" rx="20" fill="#2F7FD1"/>
+              <text x="170" y="240" fill="#FFFFFF">Haiku 4.5</text>
+              <rect x="270" y="160" width="120" height="40" rx="20" fill="#0F9C8B"/>
+              <text x="330" y="185" fill="#FFFFFF">Sonnet 5.5</text>
+              <rect x="430" y="105" width="120" height="40" rx="20" fill="#5B54E0"/>
+              <text x="490" y="130" fill="#FFFFFF">Opus 5.5</text>
+              <rect x="590" y="50" width="120" height="40" rx="20" fill="#F5C53A"/>
+              <text x="650" y="75" fill="#111111">Fable 5.1</text>
+            </g>
+            <g font-size="11" fill="#686868" text-anchor="middle">
+              <text x="170" y="272">200K context</text>
+              <text x="330" y="217">1M context</text>
+              <text x="490" y="162">1M context</text>
+              <text x="650" y="107">1M context</text>
+            </g>
+            <g font-size="12" fill="#111111" text-anchor="middle">
+              <text x="170" y="310">$5</text>
+              <text x="330" y="310">$10</text>
+              <text x="490" y="310">$20</text>
+              <text x="650" y="310">$50</text>
+            </g>
+            <text x="396" y="333" font-size="11.5" letter-spacing="1.2" fill="#686868" text-anchor="middle">OUTPUT PRICE PER 1M TOKENS &#8594;</text>
+            <text x="40" y="157" font-size="11.5" letter-spacing="1.2" fill="#686868" text-anchor="middle" transform="rotate(-90 40 157)">CAPABILITY &#8594;</text>
+          </svg>
+          <figcaption class="post__fig-cap">Each step up buys more capability at a higher price per token. Relative positioning; price axis not to scale. Mythos 5.1 omitted (restricted access).</figcaption>
+        </figure>
+
+        <h2>Model by model</h2>
+
+        <h3>Haiku 4.5 — speed and volume</h3>
+        <p>Haiku is the fastest and least expensive model in the lineup. It's the right default for work that is high-volume, well-defined and latency-sensitive: classifying and routing requests, extracting fields from documents, tagging and moderating content, and powering real-time chat where every second counts. It also makes an excellent “worker” — the sub-agent that handles narrow tasks inside a larger system. Its 200K-token context window is the smallest in the lineup, so very large document sets belong elsewhere.</p>
+
+        <h3>Sonnet 5.5 — the everyday workhorse</h3>
+        <p>The newest Sonnet is the model most teams should evaluate first. It balances capability, speed and cost for everyday software engineering, agentic workflows, customer-facing assistants and knowledge work, and it reads up to a million tokens of context. If you're unsure where to start, start here — then move up or down based on measured results.</p>
+
+        <h3>Opus 5.5 — when the work is genuinely hard</h3>
+        <p>Opus 5.5 is the strongest model in the Opus line and the default in Anthropic's developer documentation — at a lower per-token price than the Opus it replaced. Reach for it on complex, multi-step coding, large refactors, deep analysis across long documents, and agents that must plan and recover from their own mistakes. A fast mode, in research preview, runs it up to 2.5× faster at premium pricing for latency-sensitive work.</p>
+
+        <h3>Fable 5.1 — the frontier tier</h3>
+        <p>Fable 5.1 is Anthropic's most capable widely released model, aimed at the most demanding reasoning and long-horizon autonomous work. It always thinks before it answers, and a single hard request can run for many minutes — so it suits research, complex investigations and autonomous projects more than quick chat. Two practical notes for buyers: it costs 2.5× Opus 5.5 per token, and it requires 30-day data retention, so it isn't available under zero-data-retention arrangements unless Anthropic expressly authorizes it. Regulated teams should check that before designing around it.</p>
+
+        <h3>Mythos 5.1 — restricted</h3>
+        <p>Mythos 5.1 shares Fable's capabilities but is offered only to organizations in a restricted access program. For most teams it isn't an option today; Fable 5.1 is the closest generally available equivalent.</p>
+
+        <h2>The smartest setup is usually more than one model</h2>
+
+        <p>The highest-leverage pattern we see is <strong>routing</strong>: let a fast, inexpensive model triage every request, and escalate only the work that needs more horsepower. Most traffic in a real application is routine — so most of it never has to touch the most expensive model.</p>
+
+        <figure class="post__figure">
+          <svg viewBox="0 0 720 250" role="img" aria-labelledby="cm2-t cm2-d" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono', ui-monospace, monospace">
+            <title id="cm2-t">Routing requests across Claude models</title>
+            <desc id="cm2-d">Incoming requests are triaged by Haiku 4.5. Routine work stays on Haiku, standard work goes to Sonnet 5.5, and complex work escalates to Opus 5.5 or Fable 5.1.</desc>
+            <defs>
+              <marker id="cm2-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="#686868"/>
+              </marker>
+            </defs>
+            <rect x="0" y="100" width="120" height="50" rx="10" fill="none" stroke="#111111" stroke-opacity="0.35"/>
+            <g font-size="11.5" letter-spacing="1" fill="#111111" text-anchor="middle">
+              <text x="60" y="121">INCOMING</text>
+              <text x="60" y="138">REQUESTS</text>
+            </g>
+            <line x1="122" y1="125" x2="164" y2="125" stroke="#686868" stroke-width="1.5" marker-end="url(#cm2-arrow)"/>
+            <rect x="170" y="92" width="170" height="66" rx="12" fill="#2F7FD1"/>
+            <text x="255" y="120" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">Haiku 4.5</text>
+            <text x="255" y="140" font-size="11" fill="#FFFFFF" text-anchor="middle">triage &amp; classify</text>
+            <g fill="none" stroke="#686868" stroke-width="1.5">
+              <path d="M342 125 C 380 125, 380 45, 412 45" marker-end="url(#cm2-arrow)"/>
+              <path d="M342 125 L 412 125" marker-end="url(#cm2-arrow)"/>
+              <path d="M342 125 C 380 125, 380 205, 412 205" marker-end="url(#cm2-arrow)"/>
+            </g>
+            <g font-size="12.5" fill="#FFFFFF" text-anchor="middle">
+              <rect x="420" y="20" width="300" height="50" rx="12" fill="#2F7FD1"/>
+              <text x="570" y="50">Routine &#8594; stays on Haiku 4.5</text>
+              <rect x="420" y="100" width="300" height="50" rx="12" fill="#0F9C8B"/>
+              <text x="570" y="130">Standard &#8594; Sonnet 5.5</text>
+              <rect x="420" y="180" width="300" height="50" rx="12" fill="#5B54E0"/>
+              <text x="570" y="210">Complex &#8594; Opus 5.5 or Fable 5.1</text>
+            </g>
+          </svg>
+          <figcaption class="post__fig-cap">A small model triages; harder work escalates. Most traffic never needs the most expensive model.</figcaption>
+        </figure>
+
+        <h2>How to choose: a practical checklist</h2>
+
+        <ul>
+          <li><strong>Start with the cheapest model that might clear your quality bar</strong>, and measure it on your real tasks — not on public benchmarks.</li>
+          <li><strong>Judge cost per completed task, not per request.</strong> A cheaper model that needs retries or extra turns can end up costing more.</li>
+          <li><strong>Tune effort before you switch models.</strong> Current Claude models let you dial how hard they think, and Anthropic's guidance notes that newer models at lower effort often match or beat previous-generation models running at high effort.</li>
+          <li><strong>Cache what repeats.</strong> Prompt caching makes large, stable instructions and reference documents far cheaper to resend.</li>
+          <li><strong>Re-test on every release.</strong> New Opus and Sonnet models both landed in September 2026 alone. Yesterday's best choice may not be today's.</li>
+        </ul>
+
+        <blockquote>The right model isn't the most powerful one — it's the least powerful one that reliably does the job.</blockquote>
+
+        <p>Model choice compounds. A good routing decision, made once, saves money and latency on every request your system will ever handle — which makes an afternoon of measurement before you commit one of the best investments in an AI project.</p>
+
+        <p><em>Lineup, context windows and prices as of October 1, 2026, from Anthropic's <a href="https://platform.claude.com/docs/en/about-claude/models/overview" rel="noopener" target="_blank">models overview</a> and <a href="https://platform.claude.com/docs/en/about-claude/pricing" rel="noopener" target="_blank">pricing</a> documentation. Models and prices change frequently — check the source before budgeting.</em></p>
+      </div>
+
+      <div class="post__cta">
+        <h2>Not sure which model fits your workload?</h2>
+        <p>Datreon helps teams benchmark models on their real tasks and design routing that cuts cost without cutting quality.</p>
+        <a href="/#contact" class="btn btn--fill btn--lg">Start a Conversation</a>
+      </div>
+
+      <a href="/blog" class="post__back"><span aria-hidden="true">←</span> All insights</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <div class="nav__brand">
+          <img class="nav__mark" src="/assets/datreon-icon.png" alt="" />
+          <img class="nav__wordmark" src="/assets/datreon-wordmark.png" alt="Datreon" />
+        </div>
+        <p class="footer__tagline">Engineering Intelligence. Delivering Impact.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="/#services">Services</a>
+        <a href="/#work">Work</a>
+        <a href="/#about">About</a>
+        <a href="/blog">Insights</a>
+        <a href="/#contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://www.linkedin.com/company/datreon" aria-label="Datreon on LinkedIn" rel="noopener" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v14.8H.2V8zm7.6 0h4.4v2h.06c.61-1.16 2.11-2.38 4.35-2.38 4.65 0 5.51 3.06 5.51 7.04v8.14h-4.6v-7.2c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8v7.33H7.8V8z"/></svg>
+        </a>
+        <span class="footer__domain">datreon.tech</span>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Datreon · Chesapeake, Virginia</p>
+    </div>
+  </footer>
+
+</body>
+</html>

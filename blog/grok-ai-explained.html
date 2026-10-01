@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grok, Explained: What xAI’s Models Do Well — and Where to Be Careful · Datreon</title>
+  <meta name="description" content="Grok has grown from the assistant inside X into a full model family for code, agents, images, video and voice. Where it shines, what it costs, and what to evaluate before you build on it." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#F2F2F0" />
+  <link rel="canonical" href="https://datreon.tech/blog/grok-ai-explained" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/assets/datreon-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Datreon" />
+  <meta property="og:title" content="Grok, Explained: What xAI’s Models Do Well — and Where to Be Careful" />
+  <meta property="og:description" content="Grok is now a full model family for code, agents, images, video and voice. Where it shines, what it costs, and what to evaluate first." />
+  <meta property="og:url" content="https://datreon.tech/blog/grok-ai-explained" />
+  <meta property="og:image" content="https://datreon.tech/assets/og-image.png" />
+  <meta property="article:published_time" content="2026-10-01" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Grok, Explained: What xAI’s Models Do Well — and Where to Be Careful" />
+  <meta name="twitter:image" content="https://datreon.tech/assets/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css?v=30" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Grok, Explained: What xAI’s Models Do Well — and Where to Be Careful",
+    "description": "Grok is now a full model family for code, agents, images, video and voice. Where it shines, what it costs, and what to evaluate first.",
+    "datePublished": "2026-10-01",
+    "dateModified": "2026-10-01",
+    "url": "https://datreon.tech/blog/grok-ai-explained",
+    "image": "https://datreon.tech/assets/og-image.png",
+    "author": { "@type": "Organization", "name": "Datreon", "url": "https://datreon.tech/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Datreon",
+      "logo": { "@type": "ImageObject", "url": "https://datreon.tech/assets/datreon-icon.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://datreon.tech/blog/grok-ai-explained" }
+  }
+  </script>
+</head>
+<body class="theme-light">
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="legal-nav">
+    <div class="container legal-nav__inner">
+      <a href="/" class="nav__brand">
+        <img class="nav__mark" src="/assets/datreon-icon.png" alt="" />
+        <img class="nav__wordmark" src="/assets/datreon-wordmark.png" alt="Datreon" />
+      </a>
+      <a href="/blog" class="legal-nav__back"><span aria-hidden="true">←</span> All insights</a>
+    </div>
+  </header>
+
+  <main class="legal">
+    <div class="container legal__inner">
+      <div class="post__watermark" aria-hidden="true"><img src="/assets/datreon-icon.png" alt="" /></div>
+      <p class="eyebrow">Artificial Intelligence</p>
+      <h1 class="legal__title">Grok, Explained: What xAI’s Models Do Well — and Where to Be Careful</h1>
+      <div class="post__meta">
+        <span class="post__cat">Datreon</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>October 1, 2026</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>6 min read</span>
+      </div>
+
+      <p class="legal__lead">Most people first met Grok as the AI assistant built into X. In 2026 it's something much bigger: a full family of models for coding, agents, images, video and voice, available through an API at aggressive prices. Here's a clear-eyed look at where it fits in a business stack — and what to check before you build on it.</p>
+
+      <div class="legal__body">
+        <p>Behind the chatbot, xAI has built a model platform that competes directly with the other frontier labs. Over the middle of 2026 it has shipped a new flagship roughly once a month — Grok 4.5, 4.6 and now 4.7 — while filling out dedicated models for creative media and voice.</p>
+
+        <h2>The Grok family at a glance</h2>
+
+        <figure class="post__figure">
+          <svg viewBox="0 0 720 262" role="img" aria-labelledby="gk1-t gk1-d" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono', ui-monospace, monospace">
+            <title id="gk1-t">The Grok model family</title>
+            <desc id="gk1-d">Text, code and agent models: Grok 4.7 flagship, Grok 4.6 and 4.5, Grok 4.3 with a 1M-token context, and Grok 4.20 reasoning and multi-agent variants. Creative media: Imagine Image 2.0 and Imagine Video 1.5. Voice: Voice Think Fast 2.0. All on one platform and API.</desc>
+            <g font-size="11.5" letter-spacing="1.3" fill="#686868">
+              <text x="0" y="16">TEXT · CODE · AGENTS</text>
+              <text x="330" y="16">CREATIVE MEDIA</text>
+              <text x="540" y="16">VOICE</text>
+            </g>
+            <g font-size="12.5" fill="#FFFFFF" text-anchor="middle">
+              <rect x="0" y="30" width="300" height="38" rx="10" fill="#5B54E0"/>
+              <text x="150" y="54" font-weight="700">Grok 4.7 — flagship</text>
+              <rect x="0" y="76" width="300" height="38" rx="10" fill="#2A3F73"/>
+              <text x="150" y="100">Grok 4.6 · Grok 4.5</text>
+              <rect x="0" y="122" width="300" height="38" rx="10" fill="#2F7FD1"/>
+              <text x="150" y="146">Grok 4.3 — 1M-token context</text>
+              <rect x="0" y="168" width="300" height="38" rx="10" fill="#2F7FD1"/>
+              <text x="150" y="192">Grok 4.20 — reasoning · multi-agent</text>
+              <rect x="330" y="30" width="180" height="38" rx="10" fill="#ED6A4C"/>
+              <text x="420" y="54">Imagine Image 2.0</text>
+              <rect x="330" y="76" width="180" height="38" rx="10" fill="#ED6A4C"/>
+              <text x="420" y="100">Imagine Video 1.5</text>
+              <rect x="540" y="30" width="180" height="38" rx="10" fill="#0F9C8B"/>
+              <text x="630" y="54">Voice Think Fast 2.0</text>
+            </g>
+            <rect x="0" y="222" width="720" height="36" rx="10" fill="#F5C53A"/>
+            <text x="360" y="245" font-size="12.5" font-weight="700" letter-spacing="1.2" fill="#111111" text-anchor="middle">ONE PLATFORM · ONE API</text>
+          </svg>
+          <figcaption class="post__fig-cap">Grok is now a multi-model platform: a flagship for text, code and agents, long-context and reasoning variants, and dedicated image, video and voice models.</figcaption>
+        </figure>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Use it for</th>
+                <th>Context</th>
+                <th>API price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Grok 4.7</td><td>Flagship: coding, chat and knowledge work</td><td>500K</td><td>$2 in / $6 out per 1M tokens</td></tr>
+              <tr><td>Grok 4.3</td><td>Very long documents and conversations</td><td>1M</td><td>$1.25 / $2.50 per 1M tokens</td></tr>
+              <tr><td>Grok 4.20 multi-agent</td><td>Agent workflows</td><td>1M</td><td>$1.25 / $2.50 per 1M tokens</td></tr>
+              <tr><td>Imagine Image 2.0</td><td>Image generation</td><td>—</td><td>$0.04 per image</td></tr>
+              <tr><td>Imagine Video 1.5</td><td>Video generation</td><td>—</td><td>$0.08 per second</td></tr>
+              <tr><td>Voice Think Fast 2.0</td><td>Speech-to-speech voice agents</td><td>—</td><td>$0.08 per minute</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Text prices shown apply to prompts under 200K tokens; longer prompts are billed at a higher rate.</p>
+
+        <h2>What makes Grok different</h2>
+
+        <ul>
+          <li><strong>Real-time awareness.</strong> Grok is built around live search across the web and X, which makes it unusually strong at “what's happening right now” questions — breaking news, emerging trends and public sentiment.</li>
+          <li><strong>One vendor for every modality.</strong> Text, code, images, video and voice all come from the same platform and API, which simplifies building media-rich products.</li>
+          <li><strong>Aggressive pricing.</strong> The flagship's $6 per million output tokens undercuts many frontier models, and the long-context variants are cheaper still.</li>
+          <li><strong>Large context.</strong> 500K tokens on the flagship and up to 1M on the long-context variants.</li>
+        </ul>
+
+        <h2>Where Grok fits best</h2>
+
+        <ul>
+          <li><strong>Social listening and trend monitoring</strong> — tracking conversations, brand mentions and fast-moving topics as they happen.</li>
+          <li><strong>Real-time research assistants</strong> — briefings on news, markets and events where freshness matters more than depth.</li>
+          <li><strong>Marketing and creative production</strong> — generating image and video variants at scale for campaigns and testing.</li>
+          <li><strong>Voice agents</strong> — speech-to-speech assistants for support lines and hands-free experiences.</li>
+          <li><strong>High-volume coding and chat</strong> — where a capable flagship at a lower output price changes the economics.</li>
+        </ul>
+
+        <h2>Where to be careful</h2>
+
+        <p>None of these are reasons to rule Grok out. They're the questions any responsible team should answer before putting a model in front of customers or sensitive data.</p>
+
+        <ul>
+          <li><strong>Safety and brand fit.</strong> Grok has drawn public scrutiny over the moderation of some of its outputs. For anything customer-facing, run your own safety and tone evaluations and add guardrails — as you should with any model.</li>
+          <li><strong>Real-time isn't the same as verified.</strong> Social data is fast but noisy. Treat live answers as leads to confirm, especially for decisions with financial or legal weight.</li>
+          <li><strong>Data governance.</strong> Review data handling, retention and enterprise terms before sending sensitive or regulated data, and confirm they meet your compliance obligations.</li>
+          <li><strong>Version churn.</strong> A new flagship every month is great for capability and hard on stability. Pin specific model versions in production and re-test before you upgrade.</li>
+        </ul>
+
+        <figure class="post__figure">
+          <svg viewBox="0 0 720 150" role="img" aria-labelledby="gk2-t gk2-d" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono', ui-monospace, monospace">
+            <title id="gk2-t">Grok flagship releases in 2026</title>
+            <desc id="gk2-d">Grok 4.5 in July, Grok 4.6 in August and Grok 4.7 in September 2026.</desc>
+            <text x="0" y="16" font-size="11.5" letter-spacing="1.3" fill="#686868">THREE FLAGSHIP UPDATES IN ABOUT THREE MONTHS</text>
+            <line x1="40" y1="88" x2="640" y2="88" stroke="#111111" stroke-opacity="0.3" stroke-width="2"/>
+            <line x1="640" y1="88" x2="700" y2="88" stroke="#111111" stroke-opacity="0.3" stroke-width="2" stroke-dasharray="4 6"/>
+            <circle cx="160" cy="88" r="11" fill="#2A3F73"/>
+            <circle cx="360" cy="88" r="11" fill="#2F7FD1"/>
+            <circle cx="560" cy="88" r="11" fill="#5B54E0"/>
+            <g font-size="14" font-weight="700" fill="#111111" text-anchor="middle">
+              <text x="160" y="60">Grok 4.5</text>
+              <text x="360" y="60">Grok 4.6</text>
+              <text x="560" y="60">Grok 4.7</text>
+            </g>
+            <g font-size="11.5" letter-spacing="1.2" fill="#686868" text-anchor="middle">
+              <text x="160" y="122">JUL 2026</text>
+              <text x="360" y="122">AUG 2026</text>
+              <text x="560" y="122">SEP 2026</text>
+              <text x="688" y="122">next?</text>
+            </g>
+          </svg>
+          <figcaption class="post__fig-cap">Fast iteration is great for capability — and a strong reason to pin model versions and re-test before upgrading.</figcaption>
+        </figure>
+
+        <h2>The bottom line</h2>
+
+        <p>Grok is a capable, cost-competitive platform with real strengths in live information and multimodal generation. It isn't the right default for every workload — few models are — but for social, media-heavy and time-sensitive applications, it belongs on the shortlist. Many teams now run a multi-model strategy: one model where real-time awareness and media matter, another where long-form reasoning or sensitive data are in play.</p>
+
+        <blockquote>Shortlist models by their strengths. Choose them by your own evaluation.</blockquote>
+
+        <p><em>Model lineup and API pricing as of October 1, 2026, from xAI's <a href="https://docs.x.ai/developers/models" rel="noopener" target="_blank">models and pricing documentation</a> and <a href="https://x.ai/news" rel="noopener" target="_blank">news</a>. Versions and prices change frequently — check the source before budgeting.</em></p>
+      </div>
+
+      <div class="post__cta">
+        <h2>Evaluating Grok against other models?</h2>
+        <p>Datreon runs side-by-side model evaluations on your real tasks — quality, cost, safety and latency — before you commit.</p>
+        <a href="/#contact" class="btn btn--fill btn--lg">Start a Conversation</a>
+      </div>
+
+      <a href="/blog" class="post__back"><span aria-hidden="true">←</span> All insights</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <div class="nav__brand">
+          <img class="nav__mark" src="/assets/datreon-icon.png" alt="" />
+          <img class="nav__wordmark" src="/assets/datreon-wordmark.png" alt="Datreon" />
+        </div>
+        <p class="footer__tagline">Engineering Intelligence. Delivering Impact.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="/#services">Services</a>
+        <a href="/#work">Work</a>
+        <a href="/#about">About</a>
+        <a href="/blog">Insights</a>
+        <a href="/#contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://www.linkedin.com/company/datreon" aria-label="Datreon on LinkedIn" rel="noopener" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v14.8H.2V8zm7.6 0h4.4v2h.06c.61-1.16 2.11-2.38 4.35-2.38 4.65 0 5.51 3.06 5.51 7.04v8.14h-4.6v-7.2c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8v7.33H7.8V8z"/></svg>
+        </a>
+        <span class="footer__domain">datreon.tech</span>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Datreon · Chesapeake, Virginia</p>
+    </div>
+  </footer>
+
+</body>
+</html>
