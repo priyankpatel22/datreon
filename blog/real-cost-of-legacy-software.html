@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Real Cost of Legacy Software (and How to Calculate Yours) · Datreon</title>
+  <meta name="description" content="The license renewal is the visible cost of legacy software. The expensive part is underneath: slower delivery, security exposure, key-person risk, and the integration tax. Here's how to estimate what yours actually costs." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#F2F2F0" />
+  <link rel="canonical" href="https://datreon.tech/blog/real-cost-of-legacy-software" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/assets/datreon-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Datreon" />
+  <meta property="og:title" content="The Real Cost of Legacy Software (and How to Calculate Yours)" />
+  <meta property="og:description" content="The license renewal is the visible cost of legacy software. The expensive part is underneath: slower delivery, security exposure, key-person risk, and the integration tax." />
+  <meta property="og:url" content="https://datreon.tech/blog/real-cost-of-legacy-software" />
+  <meta property="og:image" content="https://datreon.tech/assets/og-image.png" />
+  <meta property="article:published_time" content="2026-10-02" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Real Cost of Legacy Software (and How to Calculate Yours)" />
+  <meta name="twitter:image" content="https://datreon.tech/assets/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css?v=30" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "The Real Cost of Legacy Software (and How to Calculate Yours)",
+    "description": "The license renewal is the visible cost of legacy software. The expensive part is underneath: slower delivery, security exposure, key-person risk, and the integration tax.",
+    "datePublished": "2026-10-02",
+    "dateModified": "2026-10-02",
+    "url": "https://datreon.tech/blog/real-cost-of-legacy-software",
+    "image": "https://datreon.tech/assets/og-image.png",
+    "author": { "@type": "Organization", "name": "Datreon", "url": "https://datreon.tech/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Datreon",
+      "logo": { "@type": "ImageObject", "url": "https://datreon.tech/assets/datreon-icon.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://datreon.tech/blog/real-cost-of-legacy-software" }
+  }
+  </script>
+</head>
+<body class="theme-light">
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="legal-nav">
+    <div class="container legal-nav__inner">
+      <a href="/" class="nav__brand">
+        <img class="nav__mark" src="/assets/datreon-icon.png" alt="" />
+        <img class="nav__wordmark" src="/assets/datreon-wordmark.png" alt="Datreon" />
+      </a>
+      <a href="/blog" class="legal-nav__back"><span aria-hidden="true">←</span> All insights</a>
+    </div>
+  </header>
+
+  <main class="legal">
+    <div class="container legal__inner">
+      <div class="post__watermark" aria-hidden="true"><img src="/assets/datreon-icon.png" alt="" /></div>
+      <p class="eyebrow">Legacy Modernization</p>
+      <h1 class="legal__title">The Real Cost of Legacy Software (and How to Calculate Yours)</h1>
+      <div class="post__meta">
+        <span class="post__cat">Datreon</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>October 2, 2026</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>7 min read</span>
+      </div>
+
+      <p class="legal__lead">Ask most leadership teams what their legacy system costs and they'll quote a license or hosting number. That number is real — and it's the smallest part of the bill. The rest is hidden in delivery speed, security exposure, and the people who quietly become irreplaceable.</p>
+
+      <div class="legal__body">
+        <p>Every legacy system has a visible cost: the license renewal, the hosting invoice, the support contract. It's the number in the budget line, and it's the number everyone points to when someone asks "why haven't we replaced this yet?" It's also, almost without exception, the smallest piece of what the system is actually costing the business.</p>
+
+        <p>Below that line sits a second budget — one that never appears on an invoice, doesn't get a purchase order, and is almost never totaled up in one place. That's exactly why it persists. Nobody owns the number, so nobody is accountable for shrinking it.</p>
+
+        <h2>The iceberg</h2>
+
+        <p>Picture the license fee as the visible tip. Below the waterline is where the real mass sits: the engineering hours lost to workarounds, the security surface nobody wants to touch, the one person who understands the billing module, the custom integrations duct-taped on top. None of it shows up on the invoice. All of it shows up in your delivery timelines.</p>
+
+        <figure class="post__figure">
+          <svg viewBox="0 0 700 420" role="img" aria-labelledby="fig1-t fig1-d" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono', ui-monospace, monospace">
+            <title id="fig1-t">The legacy software cost iceberg</title>
+            <desc id="fig1-d">Above the waterline sits the visible cost: license and hosting fees. Below it sits the much larger hidden cost: slower delivery, security exposure, key-person risk, integration tax, and opportunity cost.</desc>
+            <rect x="0" y="0" width="700" height="420" fill="none"/>
+            <line x1="0" y1="118" x2="700" y2="118" stroke="#111111" stroke-opacity="0.3" stroke-dasharray="4 5"/>
+            <text x="8" y="108" font-size="11" letter-spacing="1.5" fill="#686868">WATERLINE</text>
+
+            <polygon points="260,20 440,20 360,118" fill="#F5C53A"/>
+            <text x="350" y="68" font-size="12.5" fill="#111111" text-anchor="middle">License &amp;</text>
+            <text x="350" y="85" font-size="12.5" fill="#111111" text-anchor="middle">hosting fees</text>
+
+            <polygon points="90,140 610,140 500,400 200,400" fill="#2A3F73"/>
+
+            <g font-size="12.5" fill="#FFFFFF">
+              <text x="350" y="185" text-anchor="middle" font-weight="600">HIDDEN COSTS</text>
+              <text x="350" y="212" text-anchor="middle">Slower delivery &amp; feature debt</text>
+              <text x="350" y="239" text-anchor="middle">Security exposure</text>
+              <text x="350" y="266" text-anchor="middle">Key-person risk</text>
+              <text x="350" y="293" text-anchor="middle">Integration tax</text>
+              <text x="350" y="320" text-anchor="middle">Opportunity cost</text>
+            </g>
+
+            <g font-size="11" fill="#FFFFFF" fill-opacity="0.75" text-anchor="middle">
+              <text x="350" y="355">Rarely measured. Rarely owned.</text>
+              <text x="350" y="372">Far larger than the line item above.</text>
+            </g>
+          </svg>
+          <figcaption class="post__fig-cap">The invoice is the tip. The mass that sinks delivery timelines is underneath.</figcaption>
+        </figure>
+
+        <h2>What's actually down there</h2>
+
+        <p>Five categories show up in almost every legacy environment we've assessed. They rarely get a line item, which is exactly why they compound.</p>
+
+        <p><strong>Slower delivery.</strong> Every new feature has to be threaded through code nobody fully trusts, tested against behavior nobody fully documented, and shipped around a release process built for a smaller, simpler system. Teams don't notice this as "legacy cost" — they experience it as "everything takes longer than it should," which becomes background noise until you compare it to a modern baseline.</p>
+
+        <p><strong>Security exposure.</strong> Old frameworks stop getting patched. Dependencies fall out of support. Nobody wants to touch the authentication layer because nobody's sure what else it's holding up. The cost here is asymmetric — it's near-zero until the day it isn't, and then it's the most expensive line in the entire budget.</p>
+
+        <p><strong>Key-person risk.</strong> Every legacy system eventually has one person — sometimes one contractor — who understands the parts that aren't written down anywhere. That knowledge concentration isn't a compliment to that person; it's unpriced risk sitting on the balance sheet. When they leave, the cost becomes visible all at once, usually during an incident.</p>
+
+        <p><strong>Integration tax.</strong> Modern tools expect modern interfaces. A legacy core without a clean API gets wrapped in brittle middleware, scheduled exports, and manual reconciliation — a tax paid on every single new tool the business wants to adopt, for as long as the core stays as it is.</p>
+
+        <p><strong>Opportunity cost.</strong> This is the hardest to quantify and the largest in practice: the roadmap items that never get proposed because everyone already knows the current system can't support them. You don't see a line item for the product you didn't build. You just see a competitor ship it first.</p>
+
+        <blockquote>The license fee is what you pay to keep the system running. The hidden costs are what you pay for every day it stays this way.</blockquote>
+
+        <h2>A simple way to estimate your number</h2>
+
+        <p>You don't need a six-month consulting engagement to get a directionally useful figure. For each category, ask a blunt question and attach a number to the answer:</p>
+
+        <ul>
+          <li><strong>Delivery drag</strong> — Compare a recent feature's actual timeline to what your team estimates it would take on a clean, modern stack. Multiply the gap by your fully-loaded engineering cost per sprint.</li>
+          <li><strong>Security exposure</strong> — Price out the unpatched or end-of-life components, then weight by likelihood and blast radius — the same back-of-envelope math underwriters use for cyber insurance.</li>
+          <li><strong>Key-person risk</strong> — Estimate the cost and time to replace that person's institutional knowledge, including the ramp-up period where delivery slows further.</li>
+          <li><strong>Integration tax</strong> — Add up the recurring hours spent on manual reconciliation, custom connectors, and workaround scripts across every team touching the system.</li>
+          <li><strong>Opportunity cost</strong> — List the roadmap items shelved specifically because "the system can't support it," and price the revenue or savings each one represents.</li>
+        </ul>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Cost category</th>
+                <th>Where it hides</th>
+                <th>How to estimate it</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Slower delivery</td>
+                <td>Sprint retros, missed deadlines, "it's just always slow here"</td>
+                <td>Actual vs. expected timeline on a recent feature × engineering cost per sprint</td>
+              </tr>
+              <tr>
+                <td>Security exposure</td>
+                <td>Unpatched dependencies, deferred upgrades, informal risk acceptance</td>
+                <td>Unpatched/EOL component count × likelihood × estimated breach or outage cost</td>
+              </tr>
+              <tr>
+                <td>Key-person risk</td>
+                <td>One name that comes up in every incident channel</td>
+                <td>Cost and time to document, cross-train, or replace that knowledge</td>
+              </tr>
+              <tr>
+                <td>Integration tax</td>
+                <td>Scheduled exports, manual reconciliation, brittle middleware</td>
+                <td>Recurring hours across teams on workarounds × loaded hourly cost</td>
+              </tr>
+              <tr>
+                <td>Opportunity cost</td>
+                <td>Roadmap items quietly shelved as "not feasible here"</td>
+                <td>Revenue or savings of each shelved initiative, summed</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Total those five numbers and compare the sum to the license line everyone already budgets for. In most environments we've looked at, the hidden total is several times the visible one — and it compounds every quarter the system stays unchanged, because the workarounds pile on top of each other.</p>
+
+        <h2>This isn't an argument for panic</h2>
+
+        <p>None of this means every legacy system needs to be torn out tomorrow. Plenty of old systems are stable, well-understood, and genuinely cheap to run — the calculation above is how you tell those apart from the ones quietly draining the business. The point isn't fear. It's visibility: once the hidden number has a value next to it, modernization stops being a vague "someday" initiative and becomes a decision you can actually justify with math, prioritize against other spending, and scope to the pieces that matter most.</p>
+
+        <p>That's also the case for incremental modernization over a rip-and-replace bet. You don't need to retire the whole system to shrink most of these costs — you need to find the highest-cost piece on your worksheet and start there.</p>
+      </div>
+
+      <div class="post__cta">
+        <h2>Not sure what your legacy system is really costing you?</h2>
+        <p>Datreon helps teams put a real number on the hidden cost of aging systems — and build a modernization plan sized to match.</p>
+        <a href="/#contact" class="btn btn--fill btn--lg">Start a Conversation</a>
+      </div>
+
+      <a href="/blog" class="post__back"><span aria-hidden="true">←</span> All insights</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <div class="nav__brand">
+          <img class="nav__mark" src="/assets/datreon-icon.png" alt="" />
+          <img class="nav__wordmark" src="/assets/datreon-wordmark.png" alt="Datreon" />
+        </div>
+        <p class="footer__tagline">Engineering Intelligence. Delivering Impact.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="/#services">Services</a>
+        <a href="/#work">Work</a>
+        <a href="/#about">About</a>
+        <a href="/blog">Insights</a>
+        <a href="/#contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://www.linkedin.com/company/datreon" aria-label="Datreon on LinkedIn" rel="noopener" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v14.8H.2V8zm7.6 0h4.4v2h.06c.61-1.16 2.11-2.38 4.35-2.38 4.65 0 5.51 3.06 5.51 7.04v8.14h-4.6v-7.2c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8v7.33H7.8V8z"/></svg>
+        </a>
+        <span class="footer__domain">datreon.tech</span>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Datreon · Chesapeake, Virginia</p>
+    </div>
+  </footer>
+
+</body>
+</html>
