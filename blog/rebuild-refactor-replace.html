@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rebuild vs. Refactor vs. Replace: A Decision Framework · Datreon</title>
+  <meta name="description" content="Three honest paths for an aging system — incremental refactor, targeted replace, or full rebuild — and a clear-eyed framework for choosing based on change rate, risk, and strategic fit." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#F2F2F0" />
+  <link rel="canonical" href="https://datreon.tech/blog/rebuild-refactor-replace" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/assets/datreon-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Datreon" />
+  <meta property="og:title" content="Rebuild vs. Refactor vs. Replace: A Decision Framework" />
+  <meta property="og:description" content="Three honest paths for an aging system — and a clear-eyed framework for choosing based on change rate, risk, and strategic fit." />
+  <meta property="og:url" content="https://datreon.tech/blog/rebuild-refactor-replace" />
+  <meta property="og:image" content="https://datreon.tech/assets/og-image.png" />
+  <meta property="article:published_time" content="2026-10-09" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rebuild vs. Refactor vs. Replace: A Decision Framework" />
+  <meta name="twitter:image" content="https://datreon.tech/assets/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css?v=30" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Rebuild vs. Refactor vs. Replace: A Decision Framework",
+    "description": "Three honest paths for an aging system — incremental refactor, targeted replace, or full rebuild — and a clear-eyed framework for choosing based on change rate, risk, and strategic fit.",
+    "datePublished": "2026-10-09",
+    "dateModified": "2026-10-09",
+    "url": "https://datreon.tech/blog/rebuild-refactor-replace",
+    "image": "https://datreon.tech/assets/og-image.png",
+    "author": { "@type": "Organization", "name": "Datreon", "url": "https://datreon.tech/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Datreon",
+      "logo": { "@type": "ImageObject", "url": "https://datreon.tech/assets/datreon-icon.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://datreon.tech/blog/rebuild-refactor-replace" }
+  }
+  </script>
+</head>
+<body class="theme-light">
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="legal-nav">
+    <div class="container legal-nav__inner">
+      <a href="/" class="nav__brand">
+        <img class="nav__mark" src="/assets/datreon-icon.png" alt="" />
+        <img class="nav__wordmark" src="/assets/datreon-wordmark.png" alt="Datreon" />
+      </a>
+      <a href="/blog" class="legal-nav__back"><span aria-hidden="true">←</span> All insights</a>
+    </div>
+  </header>
+
+  <main class="legal">
+    <div class="container legal__inner">
+      <div class="post__watermark" aria-hidden="true"><img src="/assets/datreon-icon.png" alt="" /></div>
+      <p class="eyebrow">Legacy Modernization</p>
+      <h1 class="legal__title">Rebuild vs. Refactor vs. Replace: A Decision Framework</h1>
+      <div class="post__meta">
+        <span class="post__cat">Datreon</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>October 9, 2026</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>7 min read</span>
+      </div>
+
+      <p class="legal__lead">Every aging system eventually forces the same question: do we clean this up, swap out the worst part, or start over? Most teams answer it with frustration instead of a framework — and frustration almost always says "rebuild," even when rebuild is the most expensive, riskiest answer on the list.</p>
+
+      <div class="legal__body">
+        <p>The question itself is rarely wrong. What's wrong is how it usually gets decided — in a hallway conversation after a bad release, or in a planning meeting where the loudest complaint wins. That's how organizations end up committing a year and a seven-figure budget to a full rewrite when the actual problem was one brittle module that a two-sprint replacement would have fixed.</p>
+
+        <p>Refactor, replace, and rebuild aren't degrees of the same action. They're three different tools for three different problems, and picking the wrong one doesn't just waste money — it burns the credibility you need to get the next modernization effort funded.</p>
+
+        <h2>A framework, not a vibe</h2>
+
+        <p>The right path depends on three questions, asked in order: Does the system still fit where the business is going? Where is the pain actually located? And can that pain be isolated behind a clean boundary, or is it woven through everything? Answer those honestly and the choice mostly makes itself.</p>
+
+        <figure class="post__figure">
+          <svg viewBox="0 0 700 320" role="img" aria-labelledby="figA-t figA-d" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono', ui-monospace, monospace">
+            <title id="figA-t">A decision tree for rebuild, replace, or refactor</title>
+            <desc id="figA-d">If the system no longer fits strategically, rebuild. If it fits but the pain is isolated to one bounded module, replace that module. If it fits and the pain is spread out, refactor incrementally.</desc>
+
+            <g stroke="#111111" stroke-opacity="0.35" stroke-width="1.4" fill="none">
+              <line x1="350" y1="66" x2="115" y2="128"/>
+              <line x1="350" y1="66" x2="380" y2="128"/>
+              <line x1="380" y1="190" x2="335" y2="238"/>
+              <line x1="380" y1="190" x2="525" y2="238"/>
+            </g>
+            <g font-size="11" fill="#686868" text-anchor="middle">
+              <text x="195" y="100">No — fit is broken</text>
+              <text x="415" y="100">Yes — fit is fine</text>
+              <text x="300" y="218">Yes, isolated</text>
+              <text x="500" y="218">No, diffuse</text>
+            </g>
+
+            <rect x="250" y="10" width="200" height="56" rx="10" fill="none" stroke="#111111" stroke-opacity="0.35"/>
+            <g font-size="13" fill="#111111" text-anchor="middle">
+              <text x="350" y="33">Does it still fit</text>
+              <text x="350" y="50">strategically?</text>
+            </g>
+
+            <rect x="250" y="130" width="260" height="56" rx="10" fill="none" stroke="#111111" stroke-opacity="0.35"/>
+            <g font-size="13" fill="#111111" text-anchor="middle">
+              <text x="380" y="153">Is the pain isolated to</text>
+              <text x="380" y="170">one bounded module?</text>
+            </g>
+
+            <rect x="20" y="128" width="190" height="60" rx="10" fill="#ED6A4C"/>
+            <g font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+              <text x="115" y="153">REBUILD</text>
+            </g>
+            <text x="115" y="172" font-size="11" fill="#FFFFFF" text-anchor="middle">the foundation is wrong</text>
+
+            <rect x="250" y="240" width="170" height="60" rx="10" fill="#2F7FD1"/>
+            <g font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+              <text x="335" y="265">REPLACE</text>
+            </g>
+            <text x="335" y="284" font-size="11" fill="#FFFFFF" text-anchor="middle">swap the isolated piece</text>
+
+            <rect x="440" y="240" width="170" height="60" rx="10" fill="#0F9C8B"/>
+            <g font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+              <text x="525" y="265">REFACTOR</text>
+            </g>
+            <text x="525" y="284" font-size="11" fill="#FFFFFF" text-anchor="middle">clean it up incrementally</text>
+          </svg>
+          <figcaption class="post__fig-cap">Three questions, in order, usually make the choice for you — before anyone has to argue about it.</figcaption>
+        </figure>
+
+        <h2>Refactor: the problem is debt, not direction</h2>
+
+        <p>Refactor when the system is still strategically correct and the pain is spread out rather than concentrated — duplicated logic, inconsistent patterns, tests that take too long, code nobody enjoys touching but nothing is actually broken. This is maintenance debt, not a design failure, and it's paid down incrementally: clean up the file you're already in, add the test you wish existed, extract the function that's grown three responsibilities. No big-bang cutover, no new failure modes, no risk of a six-month project that never ships.</p>
+
+        <p>The trap with refactoring is treating it as a project instead of a habit. A refactor with its own budget line and its own deadline tends to balloon into something closer to a rebuild. The refactors that actually finish are the ones folded into the regular cadence of shipping features — a little cleanup with every change that touches the area.</p>
+
+        <h2>Replace: the problem is contained</h2>
+
+        <p>Replace when the system still fits, but one specific piece is the source of most of the pain — a reporting module nobody can safely change, a search feature built on a dead dependency, a billing integration that breaks every time a partner updates their API. If you can draw a clean boundary around that piece and put an interface in front of it, you can swap what's behind the interface without touching anything else.</p>
+
+        <p>This is the same instinct behind the strangler-fig approach we've written about before: isolate, build the replacement alongside the original, cut over behind the interface, retire the old piece once the new one has earned trust. It concentrates risk into one bounded area instead of spreading it across the whole system, which is exactly what makes it tolerable for a team that still has a business to run while the work happens.</p>
+
+        <blockquote>The hardest part of "replace" isn't writing the new module — it's resisting the urge to also fix the other eleven things you noticed while you were in there.</blockquote>
+
+        <h2>Rebuild: the problem is the foundation itself</h2>
+
+        <p>Rebuild when the honest answer to the first question is no — the system no longer matches the business it's supposed to serve. The data model assumes a product line you discontinued. The architecture can't support the scale or the compliance requirements you have today. The platform it's built on is end-of-life and nobody can hire for it anymore. In these cases, refactoring improves a thing that's structurally wrong, and replacing one module leaves the mismatch everywhere else untouched.</p>
+
+        <p>Rebuild is also the most expensive and least forgiving option on this list, so it deserves the highest bar for evidence, not the lowest. "We hate this code" is a refactor signal. "This code cannot do what the business now needs, and no amount of cleanup changes that" is a rebuild signal. Confusing the two is how rebuilds get greenlit for problems a few months of focused refactoring would have solved.</p>
+
+        <h2>Comparing the three paths</h2>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Dimension</th>
+                <th>Refactor</th>
+                <th>Replace</th>
+                <th>Rebuild</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Risk</td>
+                <td>Low — contained to code you're already touching</td>
+                <td>Moderate — bounded to one isolated module</td>
+                <td>High — the whole system changes under you</td>
+              </tr>
+              <tr>
+                <td>Time to value</td>
+                <td>Fast — value compounds with every change</td>
+                <td>Weeks to a quarter per module</td>
+                <td>Months to years before parity, let alone gain</td>
+              </tr>
+              <tr>
+                <td>Cost</td>
+                <td>Low, ongoing, absorbed into normal delivery</td>
+                <td>Moderate, scoped, budgeted per module</td>
+                <td>High, often underestimated by a wide margin</td>
+              </tr>
+              <tr>
+                <td>Use it when</td>
+                <td>Fit is fine; the mess is spread out but manageable</td>
+                <td>Fit is fine; the pain is isolated and boundable</td>
+                <td>Fit itself is broken, not just the code</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Notice the pattern: cost and risk rise together, and so does the bar for choosing that option. That's not a coincidence — it's the reason so many organizations default to rebuild when refactor or replace would have delivered the same relief for a fraction of the risk. The expensive option should be the one you arrive at after ruling out the cheaper ones, not the one you reach for first because it feels decisive.</p>
+
+        <p>None of this requires a committee or a six-week assessment. It requires asking the three questions in order, being honest about the answers, and resisting the pull toward the biggest, most dramatic fix when a smaller one actually solves the problem you have.</p>
+      </div>
+
+      <div class="post__cta">
+        <h2>Not sure which path fits your system?</h2>
+        <p>Datreon helps teams diagnose the real problem first — then scopes the refactor, replacement, or rebuild that actually matches it.</p>
+        <a href="/#contact" class="btn btn--fill btn--lg">Start a Conversation</a>
+      </div>
+
+      <a href="/blog" class="post__back"><span aria-hidden="true">←</span> All insights</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <div class="nav__brand">
+          <img class="nav__mark" src="/assets/datreon-icon.png" alt="" />
+          <img class="nav__wordmark" src="/assets/datreon-wordmark.png" alt="Datreon" />
+        </div>
+        <p class="footer__tagline">Engineering Intelligence. Delivering Impact.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="/#services">Services</a>
+        <a href="/#work">Work</a>
+        <a href="/#about">About</a>
+        <a href="/blog">Insights</a>
+        <a href="/#contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://www.linkedin.com/company/datreon" aria-label="Datreon on LinkedIn" rel="noopener" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v14.8H.2V8zm7.6 0h4.4v2h.06c.61-1.16 2.11-2.38 4.35-2.38 4.65 0 5.51 3.06 5.51 7.04v8.14h-4.6v-7.2c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8v7.33H7.8V8z"/></svg>
+        </a>
+        <span class="footer__domain">datreon.tech</span>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Datreon · Chesapeake, Virginia</p>
+    </div>
+  </footer>
+
+</body>
+</html>
