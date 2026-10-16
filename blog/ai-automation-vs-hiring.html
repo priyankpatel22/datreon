@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Automation vs. Hiring: How to Decide What to Automate First · Datreon</title>
+  <meta name="description" content="Not every task is a candidate for automation, and not every gap needs a new hire. A simple framework — volume, variability, error tolerance, and judgment — for deciding what to automate first." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#F2F2F0" />
+  <link rel="canonical" href="https://datreon.tech/blog/ai-automation-vs-hiring" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/assets/datreon-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Datreon" />
+  <meta property="og:title" content="AI Automation vs. Hiring: How to Decide What to Automate First" />
+  <meta property="og:description" content="Not every task is a candidate for automation, and not every gap needs a new hire. A framework for sequencing automation sensibly, based on volume, variability, error tolerance, and judgment." />
+  <meta property="og:url" content="https://datreon.tech/blog/ai-automation-vs-hiring" />
+  <meta property="og:image" content="https://datreon.tech/assets/og-image.png" />
+  <meta property="article:published_time" content="2026-10-16" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI Automation vs. Hiring: How to Decide What to Automate First" />
+  <meta name="twitter:image" content="https://datreon.tech/assets/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css?v=30" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "AI Automation vs. Hiring: How to Decide What to Automate First",
+    "description": "Not every task is a candidate for automation, and not every gap needs a new hire. A framework for sequencing automation sensibly, based on volume, variability, error tolerance, and judgment.",
+    "datePublished": "2026-10-16",
+    "dateModified": "2026-10-16",
+    "url": "https://datreon.tech/blog/ai-automation-vs-hiring",
+    "image": "https://datreon.tech/assets/og-image.png",
+    "author": { "@type": "Organization", "name": "Datreon", "url": "https://datreon.tech/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Datreon",
+      "logo": { "@type": "ImageObject", "url": "https://datreon.tech/assets/datreon-icon.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://datreon.tech/blog/ai-automation-vs-hiring" }
+  }
+  </script>
+</head>
+<body class="theme-light">
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="legal-nav">
+    <div class="container legal-nav__inner">
+      <a href="/" class="nav__brand">
+        <img class="nav__mark" src="/assets/datreon-icon.png" alt="" />
+        <img class="nav__wordmark" src="/assets/datreon-wordmark.png" alt="Datreon" />
+      </a>
+      <a href="/blog" class="legal-nav__back"><span aria-hidden="true">←</span> All insights</a>
+    </div>
+  </header>
+
+  <main class="legal">
+    <div class="container legal__inner">
+      <div class="post__watermark" aria-hidden="true"><img src="/assets/datreon-icon.png" alt="" /></div>
+      <p class="eyebrow">Artificial Intelligence</p>
+      <h1 class="legal__title">AI Automation vs. Hiring: How to Decide What to Automate First</h1>
+      <div class="post__meta">
+        <span class="post__cat">Datreon</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>October 16, 2026</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>6 min read</span>
+      </div>
+
+      <p class="legal__lead">"Should we automate this or hire for it?" is the wrong first question. The right one is narrower: what kind of work is this, and does that kind of work even belong to a person or a machine? Answer that, and the hiring-versus-automation debate mostly answers itself.</p>
+
+      <div class="legal__body">
+        <p>Most organizations treat automation as a budget decision — a line item that competes with headcount for the same dollars. That framing sends people chasing the wrong projects. They automate the task that's easiest to demo, or the one a vendor is pitching hardest, rather than the one that actually behaves like something a machine should be doing.</p>
+
+        <p>The better framing starts with the work itself, not the org chart. Every task sits somewhere on two axes that matter far more than how "AI-ready" it sounds in a pitch deck: how often it happens, and how much it varies each time it happens.</p>
+
+        <h2>The two variables that actually decide it</h2>
+
+        <p><strong>Volume</strong> is how often the task occurs. High-volume work is where automation pays for itself fastest, because every hour you save compounds across hundreds or thousands of repetitions. Low-volume work rarely justifies the engineering effort, no matter how tedious it feels in the moment.</p>
+
+        <p><strong>Variability</strong> is how much the task changes from one instance to the next. Low-variability work follows a predictable shape — the same fields, the same categories, the same decision points. High-variability work requires reading context, weighing exceptions, and making a judgment call that doesn't reduce neatly to a rule.</p>
+
+        <p>Two more factors refine the call once volume and variability put a task on the map: <strong>error tolerance</strong> — what happens when the system gets it wrong, and how easily that's caught — and <strong>judgment required</strong> — whether getting it right depends on facts or on weighing competing interests. A task can be high-volume and low-variability on paper and still need a human in the loop if a mistake is expensive and hard to catch.</p>
+
+        <h2>Plotting the work: volume vs. variability</h2>
+
+        <p>Put every candidate task on a simple grid, and the right move for each one stops being a debate.</p>
+
+        <figure class="post__figure">
+          <svg viewBox="0 0 620 430" role="img" aria-labelledby="fig1-t fig1-d" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono', ui-monospace, monospace">
+            <title id="fig1-t">Volume versus variability matrix for deciding what to automate</title>
+            <desc id="fig1-d">A 2x2 grid plotting task volume against variability. High volume, low variability tasks are automate-first. High volume, high variability tasks are augment. Low volume, low variability tasks are quick wins. Low volume, high variability tasks stay human.</desc>
+            <g>
+              <rect x="40" y="40" width="260" height="165" rx="6" fill="#F5C53A"/>
+              <rect x="320" y="40" width="260" height="165" rx="6" fill="#5B54E0" fill-opacity="0.14"/>
+              <rect x="40" y="225" width="260" height="165" rx="6" fill="#0F9C8B" fill-opacity="0.14"/>
+              <rect x="320" y="225" width="260" height="165" rx="6" fill="#ED6A4C" fill-opacity="0.14"/>
+            </g>
+            <g stroke="#111111" stroke-opacity="0.45" stroke-width="1.4">
+              <line x1="40" y1="40" x2="40" y2="390"/>
+              <line x1="40" y1="390" x2="580" y2="390"/>
+            </g>
+            <g text-anchor="middle">
+              <text x="170" y="112" font-size="15" font-weight="700" fill="#111111">AUTOMATE FIRST</text>
+              <text x="170" y="133" font-size="11.5" fill="#111111">high volume · low variability</text>
+              <text x="450" y="112" font-size="15" font-weight="700" fill="#5B54E0">AUGMENT</text>
+              <text x="450" y="133" font-size="11.5" fill="#686868">high volume · high variability</text>
+              <text x="170" y="297" font-size="15" font-weight="700" fill="#0F9C8B">QUICK WINS</text>
+              <text x="170" y="318" font-size="11.5" fill="#686868">low volume · low variability</text>
+              <text x="450" y="297" font-size="15" font-weight="700" fill="#ED6A4C">KEEP HUMAN</text>
+              <text x="450" y="318" font-size="11.5" fill="#686868">low volume · high variability</text>
+            </g>
+            <text x="310" y="416" font-size="12" letter-spacing="1.5" fill="#686868" text-anchor="middle">VARIABILITY  &#8594;</text>
+            <text x="20" y="215" font-size="12" letter-spacing="1.5" fill="#686868" text-anchor="middle" transform="rotate(-90 20 215)">VOLUME  &#8594;</text>
+          </svg>
+          <figcaption class="post__fig-cap">Start in the gold quadrant. Everything else is a different conversation, not a smaller version of the same one.</figcaption>
+        </figure>
+
+        <h2>Reading the four quadrants</h2>
+
+        <p><strong>Automate first — high volume, low variability.</strong> Invoice coding, data entry, routing requests by a handful of known categories, generating the same report every week. The pattern is stable enough that a system can learn it once and run it thousands of times without surprises. This is where automation pays back fastest and where it's safest to go first, because mistakes are easy to spot and the blast radius of getting one wrong is small.</p>
+
+        <p><strong>Augment — high volume, high variability.</strong> Customer messages, first drafts of outreach, document summarization. There's enough repetition to make tooling worthwhile, but enough variation that a person still needs to review, correct, or finish the work. The win here isn't removing the person — it's giving them a faster starting point.</p>
+
+        <p><strong>Quick wins — low volume, low variability.</strong> Scheduling, routine status replies, simple lookups. These tasks don't happen often enough to justify a serious automation project on their own, but they're cheap to script because the logic is simple. Bundle several of these together rather than building a separate system for each.</p>
+
+        <p><strong>Keep human — low volume, high variability.</strong> Contract negotiation, novel strategic analysis, judgment calls with real stakes and no repeatable pattern. There isn't enough signal for a system to learn from, and the cost of a wrong call is too high to hand to something that can't be held accountable. This is where you hire or where your best people already belong — not where you look for a tool.</p>
+
+        <h2>What this actually buys you</h2>
+
+        <p>Mapping candidate tasks this way turns a vague "we should use AI more" into a short, defensible list — and it keeps hiring plans honest too, because it separates roles that are mostly repeatable throughput from roles that exist for judgment under uncertainty.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Task pattern</th>
+                <th>Volume / variability</th>
+                <th>Recommended path</th>
+                <th>Where the return shows up</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Invoice &amp; data entry processing</td>
+                <td>High / low</td>
+                <td>Automate first</td>
+                <td>Headcount avoided, faster close</td>
+              </tr>
+              <tr>
+                <td>Support ticket triage &amp; routing</td>
+                <td>High / medium</td>
+                <td>Augment</td>
+                <td>Faster first response, fewer escalations</td>
+              </tr>
+              <tr>
+                <td>Scheduling &amp; routine replies</td>
+                <td>Medium / low</td>
+                <td>Quick win</td>
+                <td>Hours back per person, per week</td>
+              </tr>
+              <tr>
+                <td>Outreach drafting &amp; summarization</td>
+                <td>High / high</td>
+                <td>Augment</td>
+                <td>Faster drafts; human still finalizes</td>
+              </tr>
+              <tr>
+                <td>Contract review &amp; negotiation</td>
+                <td>Low / high</td>
+                <td>Keep human; hire for it</td>
+                <td>Risk avoided, not time saved</td>
+              </tr>
+              <tr>
+                <td>Novel strategic analysis</td>
+                <td>Low / high</td>
+                <td>Keep human; hire for it</td>
+                <td>No repeatable pattern to automate</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Sequencing, not a one-time decision</h2>
+
+        <p>Treat this as a map you redraw, not a decision you make once. A task that starts in "keep human" often moves to "augment" once you've built the data pipeline and review habits from an earlier automation project — the infrastructure, not just the model, is what makes the second project easier than the first. Start in the gold quadrant, prove it works end to end, and let the next quadrant come to you rather than reaching for it too soon.</p>
+
+        <p>The goal was never fewer people or more automation for its own sake. It's giving each piece of work — whether it's throughput a system can own or judgment only a person can — the path that actually fits it.</p>
+      </div>
+
+      <div class="post__cta">
+        <h2>Not sure which of your workflows belong where?</h2>
+        <p>Datreon helps teams map their work by volume and variability, then builds the automation that earns its place — and leaves the judgment calls to people.</p>
+        <a href="/#contact" class="btn btn--fill btn--lg">Start a Conversation</a>
+      </div>
+
+      <a href="/blog" class="post__back"><span aria-hidden="true">←</span> All insights</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <div class="nav__brand">
+          <img class="nav__mark" src="/assets/datreon-icon.png" alt="" />
+          <img class="nav__wordmark" src="/assets/datreon-wordmark.png" alt="Datreon" />
+        </div>
+        <p class="footer__tagline">Engineering Intelligence. Delivering Impact.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="/#services">Services</a>
+        <a href="/#work">Work</a>
+        <a href="/#about">About</a>
+        <a href="/blog">Insights</a>
+        <a href="/#contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://www.linkedin.com/company/datreon" aria-label="Datreon on LinkedIn" rel="noopener" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v14.8H.2V8zm7.6 0h4.4v2h.06c.61-1.16 2.11-2.38 4.35-2.38 4.65 0 5.51 3.06 5.51 7.04v8.14h-4.6v-7.2c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8v7.33H7.8V8z"/></svg>
+        </a>
+        <span class="footer__domain">datreon.tech</span>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Datreon · Chesapeake, Virginia</p>
+    </div>
+  </footer>
+
+</body>
+</html>
