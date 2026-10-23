@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Small Business's Guide to Delivering Software the Government Can Actually Accept · Datreon</title>
+  <meta name="description" content="Government software delivery is rarely blocked by code quality — it's blocked by controls, documentation, and acceptance criteria nobody wrote down. A practical guide for small firms." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#F2F2F0" />
+  <link rel="canonical" href="https://datreon.tech/blog/software-government-can-accept" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/assets/datreon-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Datreon" />
+  <meta property="og:title" content="A Small Business's Guide to Delivering Software the Government Can Actually Accept" />
+  <meta property="og:description" content="Government software delivery is rarely blocked by code quality — it's blocked by controls, documentation, and acceptance criteria nobody wrote down." />
+  <meta property="og:url" content="https://datreon.tech/blog/software-government-can-accept" />
+  <meta property="og:image" content="https://datreon.tech/assets/og-image.png" />
+  <meta property="article:published_time" content="2026-10-23" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="A Small Business's Guide to Delivering Software the Government Can Actually Accept" />
+  <meta name="twitter:image" content="https://datreon.tech/assets/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css?v=30" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "A Small Business's Guide to Delivering Software the Government Can Actually Accept",
+    "description": "Government software delivery is rarely blocked by code quality — it's blocked by controls, documentation, and acceptance criteria nobody wrote down.",
+    "datePublished": "2026-10-23",
+    "dateModified": "2026-10-23",
+    "url": "https://datreon.tech/blog/software-government-can-accept",
+    "image": "https://datreon.tech/assets/og-image.png",
+    "author": { "@type": "Organization", "name": "Datreon", "url": "https://datreon.tech/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Datreon",
+      "logo": { "@type": "ImageObject", "url": "https://datreon.tech/assets/datreon-icon.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://datreon.tech/blog/software-government-can-accept" }
+  }
+  </script>
+</head>
+<body class="theme-light">
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="legal-nav">
+    <div class="container legal-nav__inner">
+      <a href="/" class="nav__brand">
+        <img class="nav__mark" src="/assets/datreon-icon.png" alt="" />
+        <img class="nav__wordmark" src="/assets/datreon-wordmark.png" alt="Datreon" />
+      </a>
+      <a href="/blog" class="legal-nav__back"><span aria-hidden="true">←</span> All insights</a>
+    </div>
+  </header>
+
+  <main class="legal">
+    <div class="container legal__inner">
+      <div class="post__watermark" aria-hidden="true"><img src="/assets/datreon-icon.png" alt="" /></div>
+      <p class="eyebrow">Government</p>
+      <h1 class="legal__title">A Small Business's Guide to Delivering Software the Government Can Actually Accept</h1>
+      <div class="post__meta">
+        <span class="post__cat">Datreon</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>October 23, 2026</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>8 min read</span>
+      </div>
+
+      <p class="legal__lead">Plenty of small firms can write good code for a government program. Fewer know what it takes to get that code formally accepted — and the gap between the two is where timelines slip, invoices sit unpaid, and contracts don't get renewed.</p>
+
+      <div class="legal__body">
+        <p>A program office doesn't accept software because it works on your laptop in the demo. It accepts software because a specific, documented process says it's allowed to — and that process was almost never written by engineers. It was written by people worried about security, accessibility, continuity of operations, and what happens eighteen months from now when your team isn't the one maintaining it.</p>
+
+        <p>None of that is a mystery once you've been through it. It's also not something most small businesses learn until they hit it the hard way, mid-contract, with a delivery deadline already in motion.</p>
+
+        <h2>Code is not the deliverable</h2>
+
+        <p>The functional software is maybe a third of what "acceptance" actually checks. The rest is the evidence trail around it: proof that the required security controls are implemented, proof that it's usable by people with disabilities, proof that someone besides your team can operate it, and a written agreement — signed before you started — about what "done" even means.</p>
+
+        <p>Teams that treat the artifacts as an afterthought end up writing them under deadline pressure, badly, after the code is already finished. Teams that treat them as part of the build produce better software and clear acceptance faster, because the documentation forces you to be honest about gaps while there's still time to close them.</p>
+
+        <h2>The acceptance criteria no one wrote down</h2>
+
+        <p>The single most common failure mode isn't a missing control — it's a missing agreement. "Build us a dashboard that tracks X" is not acceptance criteria. A government customer, like any customer, will discover requirements during review that were never stated during scoping, and on a government contract that discovery can stall payment and extend the period of performance.</p>
+
+        <p>Write the acceptance test plan with the program office before you build, not after — specific scenarios, specific data, a specific person who signs off. It feels like overhead early. It's the thing that keeps "finished" from becoming a negotiation.</p>
+
+        <h2>Security controls aren't optional homework</h2>
+
+        <p>Most federal and many state systems require an Authority to Operate before anything touches real data in a real environment — a formal, documented risk decision made by an accountable official, backed by evidence that the required controls (access control, encryption, logging, incident response, and more, depending on the system's risk categorization) are actually implemented, not just described in a slide.</p>
+
+        <p>The System Security Plan is the document that carries that evidence. It's tedious to write and nearly impossible to retrofit convincingly after the fact. Build it alongside the system, control by control, and the ATO package becomes a formality instead of a scramble.</p>
+
+        <figure class="post__figure">
+          <svg viewBox="0 0 720 300" role="img" aria-labelledby="figA-t figA-d" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono', ui-monospace, monospace">
+            <title id="figA-t">The government software acceptance flow</title>
+            <desc id="figA-d">Build to spec leads into security controls documentation, accessibility review, documentation handoff, and user acceptance testing, which leads to formal acceptance and ATO. A rejection at any review stage loops back to revise and resubmit.</desc>
+            <text x="2" y="16" font-size="12" letter-spacing="1.5" fill="#686868">PATH TO ACCEPTANCE</text>
+
+            <g font-size="12" text-anchor="middle">
+              <rect x="0"   y="34" width="114" height="54" rx="9" fill="#2A3F73"/>
+              <rect x="138" y="34" width="114" height="54" rx="9" fill="#5B54E0"/>
+              <rect x="276" y="34" width="114" height="54" rx="9" fill="#0F9C8B"/>
+              <rect x="414" y="34" width="114" height="54" rx="9" fill="#2F7FD1"/>
+              <rect x="552" y="34" width="114" height="54" rx="9" fill="#ED6A4C"/>
+
+              <text x="57"  y="57" fill="#FFFFFF">Build to</text>
+              <text x="57"  y="72" fill="#FFFFFF">spec</text>
+              <text x="195" y="57" fill="#FFFFFF">Security</text>
+              <text x="195" y="72" fill="#FFFFFF">controls (SSP)</text>
+              <text x="333" y="57" fill="#FFFFFF">Accessibility</text>
+              <text x="333" y="72" fill="#FFFFFF">review (508)</text>
+              <text x="471" y="57" fill="#FFFFFF">Docs &amp;</text>
+              <text x="471" y="72" fill="#FFFFFF">runbook</text>
+              <text x="609" y="57" fill="#FFFFFF">User</text>
+              <text x="609" y="72" fill="#FFFFFF">acceptance</text>
+            </g>
+
+            <g stroke="#111111" stroke-opacity="0.35" stroke-width="1.6" fill="none" marker-end="url(#figA-arrow)">
+              <line x1="114" y1="61" x2="136" y2="61"/>
+              <line x1="252" y1="61" x2="274" y2="61"/>
+              <line x1="390" y1="61" x2="412" y2="61"/>
+              <line x1="528" y1="61" x2="550" y2="61"/>
+            </g>
+            <defs>
+              <marker id="figA-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="#111111" fill-opacity="0.45"/>
+              </marker>
+            </defs>
+
+            <line x1="609" y1="88" x2="609" y2="118" stroke="#111111" stroke-opacity="0.35" stroke-width="1.6" marker-end="url(#figA-arrow)"/>
+
+            <rect x="492" y="130" width="234" height="48" rx="9" fill="#F5C53A"/>
+            <text x="609" y="150" font-size="12.5" text-anchor="middle" fill="#111111">Formal acceptance</text>
+            <text x="609" y="166" font-size="12.5" text-anchor="middle" fill="#111111">+ Authority to Operate</text>
+
+            <path d="M492,154 C300,180 150,150 57,90" fill="none" stroke="#111111" stroke-opacity="0.35" stroke-width="1.4" stroke-dasharray="4 4" marker-end="url(#figA-arrow)"/>
+            <text x="270" y="206" font-size="11.5" fill="#686868" text-anchor="middle">rejected at any review stage → revise and resubmit</text>
+          </svg>
+          <figcaption class="post__fig-cap">Every stage can send work back. Build each artifact alongside the code and the loop gets shorter, not longer.</figcaption>
+        </figure>
+
+        <h2>Accessibility is a requirement, not a nice-to-have</h2>
+
+        <p>Section 508 compliance — keyboard navigation, screen-reader support, sufficient contrast, correctly labeled form fields — is a legal requirement for most federal systems, not a stretch goal reviewers will waive if the rest of the product is strong. It's also one of the few acceptance requirements you can test yourself, early, with free tools and a keyboard, instead of waiting for someone else to find the gaps.</p>
+
+        <p>Most 508 failures aren't exotic. They're a modal that traps keyboard focus, an icon-only button with no label, or color as the only signal for an error state. Catch those in a design review, not a government accessibility audit three weeks before go-live.</p>
+
+        <h2>Documentation that outlives the contract</h2>
+
+        <p>Government software is built to be operated past the life of your contract, often by people who weren't in the room when it was designed. A runbook that assumes institutional memory isn't really a runbook. Write down what a competent stranger would need: how to deploy it, how to tell if it's healthy, what to do when it isn't, and where the data actually lives.</p>
+
+        <p>Here's the shortlist worth treating as part of the build, not paperwork for the end:</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Requirement</th>
+                <th>What it actually means</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>System Security Plan</td>
+                <td>Written, control-by-control proof of how security is implemented — not a claim that it is</td>
+              </tr>
+              <tr>
+                <td>Authority to Operate</td>
+                <td>A formal risk decision by an accountable official before the system can go live with real data</td>
+              </tr>
+              <tr>
+                <td>Section 508 accessibility</td>
+                <td>Keyboard and screen-reader usable, with a documented conformance report (VPAT)</td>
+              </tr>
+              <tr>
+                <td>Written acceptance test plan</td>
+                <td>Specific pass/fail scenarios, agreed and signed before delivery — not discovered during review</td>
+              </tr>
+              <tr>
+                <td>Operations &amp; runbook docs</td>
+                <td>Enough detail that a team that didn't build the system can run and maintain it</td>
+              </tr>
+              <tr>
+                <td>Data handling rules</td>
+                <td>Explicit, written answers on where data lives, who can access it, and how it's retired</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Build acceptance in from day one</h2>
+
+        <p>None of this is a reason for a small firm to avoid government work — it's a reason to plan for it correctly from the kickoff meeting, not the delivery deadline. Scope the controls, the accessibility review, and the acceptance test plan alongside the feature list, and "acceptance" stops being a gate at the end of the project and becomes a byproduct of how you built it.</p>
+
+        <p>The firms that deliver government software smoothly aren't the ones with the fastest engineers. They're the ones who stopped treating the paperwork as separate from the product.</p>
+      </div>
+
+      <div class="post__cta">
+        <h2>Delivering to a government program and want acceptance to go smoothly?</h2>
+        <p>Datreon builds the controls, documentation, and accessibility work into delivery from day one — so acceptance isn't a surprise at the end.</p>
+        <a href="/#contact" class="btn btn--fill btn--lg">Start a Conversation</a>
+      </div>
+
+      <a href="/blog" class="post__back"><span aria-hidden="true">←</span> All insights</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <div class="nav__brand">
+          <img class="nav__mark" src="/assets/datreon-icon.png" alt="" />
+          <img class="nav__wordmark" src="/assets/datreon-wordmark.png" alt="Datreon" />
+        </div>
+        <p class="footer__tagline">Engineering Intelligence. Delivering Impact.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="/#services">Services</a>
+        <a href="/#work">Work</a>
+        <a href="/#about">About</a>
+        <a href="/blog">Insights</a>
+        <a href="/#contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://www.linkedin.com/company/datreon" aria-label="Datreon on LinkedIn" rel="noopener" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v14.8H.2V8zm7.6 0h4.4v2h.06c.61-1.16 2.11-2.38 4.35-2.38 4.65 0 5.51 3.06 5.51 7.04v8.14h-4.6v-7.2c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8v7.33H7.8V8z"/></svg>
+        </a>
+        <span class="footer__domain">datreon.tech</span>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Datreon · Chesapeake, Virginia</p>
+    </div>
+  </footer>
+
+</body>
+</html>
