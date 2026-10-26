@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From Raw Data to Decisions: The Data Pipeline, Explained · Datreon</title>
+  <meta name="description" content="Everyone says 'pipeline.' Here's what's actually inside one: the five stages that turn messy source data into numbers people can trust, and what breaks when a stage gets skipped." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#F2F2F0" />
+  <link rel="canonical" href="https://datreon.tech/blog/raw-data-to-decisions" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/assets/datreon-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Datreon" />
+  <meta property="og:title" content="From Raw Data to Decisions: The Data Pipeline, Explained" />
+  <meta property="og:description" content="Everyone says 'pipeline.' Here's what's actually inside one: the five stages that turn messy source data into numbers people can trust." />
+  <meta property="og:url" content="https://datreon.tech/blog/raw-data-to-decisions" />
+  <meta property="og:image" content="https://datreon.tech/assets/og-image.png" />
+  <meta property="article:published_time" content="2026-10-26" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="From Raw Data to Decisions: The Data Pipeline, Explained" />
+  <meta name="twitter:image" content="https://datreon.tech/assets/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css?v=30" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "From Raw Data to Decisions: The Data Pipeline, Explained",
+    "description": "Everyone says 'pipeline.' Here's what's actually inside one: the five stages that turn messy source data into numbers people can trust, and what breaks when a stage gets skipped.",
+    "datePublished": "2026-10-26",
+    "dateModified": "2026-10-26",
+    "url": "https://datreon.tech/blog/raw-data-to-decisions",
+    "image": "https://datreon.tech/assets/og-image.png",
+    "author": { "@type": "Organization", "name": "Datreon", "url": "https://datreon.tech/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Datreon",
+      "logo": { "@type": "ImageObject", "url": "https://datreon.tech/assets/datreon-icon.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://datreon.tech/blog/raw-data-to-decisions" }
+  }
+  </script>
+</head>
+<body class="theme-light">
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="legal-nav">
+    <div class="container legal-nav__inner">
+      <a href="/" class="nav__brand">
+        <img class="nav__mark" src="/assets/datreon-icon.png" alt="" />
+        <img class="nav__wordmark" src="/assets/datreon-wordmark.png" alt="Datreon" />
+      </a>
+      <a href="/blog" class="legal-nav__back"><span aria-hidden="true">←</span> All insights</a>
+    </div>
+  </header>
+
+  <main class="legal">
+    <div class="container legal__inner">
+      <div class="post__watermark" aria-hidden="true"><img src="/assets/datreon-icon.png" alt="" /></div>
+      <p class="eyebrow">Data &amp; Analytics</p>
+      <h1 class="legal__title">From Raw Data to Decisions: The Data Pipeline, Explained</h1>
+      <div class="post__meta">
+        <span class="post__cat">Datreon</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>October 26, 2026</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>6 min read</span>
+      </div>
+
+      <p class="legal__lead">"We need a data pipeline" is one of the most-said, least-explained sentences in business. Everyone nods. Almost nobody could sketch what's actually inside one. Here's the plain-language version — five stages, each with a job, each with a specific way it fails when it's skipped.</p>
+
+      <div class="legal__body">
+        <p>If you've ever asked "where did this number come from?" and gotten a shrug, the honest answer is usually: somewhere in the pipeline, a stage got skipped. Not because anyone was careless — because "pipeline" sounds like one thing, and it's really five, and the ones that get skipped are the ones nobody can see from the dashboard.</p>
+
+        <h2>Five stages, one job each</h2>
+
+        <p>Strip away the vendor names and the architecture diagrams, and every data pipeline — whether it runs on a spreadsheet or a warehouse — does the same five things in the same order. Data gets pulled in, fixed up, shaped for a question, made available, and watched. Skip the order and you get numbers that look fine and aren't.</p>
+
+        <figure class="post__figure">
+          <svg viewBox="0 0 740 230" role="img" aria-labelledby="figA-t figA-d" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono', ui-monospace, monospace">
+            <title id="figA-t">The five-stage data pipeline</title>
+            <desc id="figA-d">Raw data moves left to right through five stages: ingest, clean, model, serve, and monitor, each handing off to the next.</desc>
+            <text x="2" y="18" font-size="12" letter-spacing="1.5" fill="#686868">RAW DATA → A DECISION YOU CAN TRUST</text>
+
+            <rect x="10"  y="46" width="128" height="80" rx="9" fill="#2F7FD1"/>
+            <rect x="154" y="46" width="128" height="80" rx="9" fill="#5B54E0"/>
+            <rect x="298" y="46" width="128" height="80" rx="9" fill="#0F9C8B"/>
+            <rect x="442" y="46" width="128" height="80" rx="9" fill="#F5C53A"/>
+            <rect x="586" y="46" width="128" height="80" rx="9" fill="#ED6A4C"/>
+
+            <g font-size="13" font-weight="600" text-anchor="middle">
+              <text x="74"  y="80" fill="#FFFFFF">INGEST</text>
+              <text x="218" y="80" fill="#FFFFFF">CLEAN</text>
+              <text x="362" y="80" fill="#FFFFFF">MODEL</text>
+              <text x="506" y="80" fill="#111111">SERVE</text>
+              <text x="650" y="80" fill="#FFFFFF">MONITOR</text>
+            </g>
+
+            <g font-size="10.5" text-anchor="middle">
+              <text x="74"  y="98" fill="#FFFFFF" opacity="0.92">pull from source</text>
+              <text x="218" y="98" fill="#FFFFFF" opacity="0.92">dedupe, validate</text>
+              <text x="362" y="98" fill="#FFFFFF" opacity="0.92">shape for the question</text>
+              <text x="506" y="98" fill="#111111" opacity="0.8">make it queryable</text>
+              <text x="650" y="98" fill="#FFFFFF" opacity="0.92">watch it stay right</text>
+            </g>
+
+            <g stroke="#111111" stroke-opacity="0.35" stroke-width="1.6" fill="none">
+              <line x1="138" y1="86" x2="150" y2="86"/>
+              <line x1="282" y1="86" x2="294" y2="86"/>
+              <line x1="426" y1="86" x2="438" y2="86"/>
+              <line x1="570" y1="86" x2="582" y2="86"/>
+            </g>
+            <g fill="#111111" fill-opacity="0.45">
+              <path d="M148 81 L155 86 L148 91 Z"/>
+              <path d="M292 81 L299 86 L292 91 Z"/>
+              <path d="M436 81 L443 86 L436 91 Z"/>
+              <path d="M580 81 L587 86 L580 91 Z"/>
+            </g>
+
+            <g font-size="10.5" fill="#686868" text-anchor="middle">
+              <text x="74"  y="158">Pulls records out of</text>
+              <text x="74"  y="172">source systems, as-is.</text>
+              <text x="218" y="158">Fixes types, dupes,</text>
+              <text x="218" y="172">and bad values.</text>
+              <text x="362" y="158">Joins and aggregates</text>
+              <text x="362" y="172">into the right grain.</text>
+              <text x="506" y="158">Exposes it through a</text>
+              <text x="506" y="172">table, API, or dashboard.</text>
+              <text x="650" y="158">Checks it's still right</text>
+              <text x="650" y="172">after today's run.</text>
+            </g>
+          </svg>
+          <figcaption class="post__fig-cap">Each stage hands the next one something slightly more trustworthy than it received.</figcaption>
+        </figure>
+
+        <h2>Ingest: getting data out, without changing its meaning</h2>
+
+        <p>Ingestion is the unglamorous job of pulling records out of wherever they actually live — a production database, a SaaS tool's API, a vendor's nightly export — and landing them somewhere you control, without silently changing what they mean. That sounds trivial. It isn't. Source systems rename fields, change time zones, paginate inconsistently, and occasionally just go down mid-export. A good ingestion stage is boring on purpose: it logs what it pulled, when, and from where, so every later number can be traced back to a specific source and run.</p>
+
+        <p>This is also where ownership gets blurry in a bad way. If the team running ingestion doesn't know who consumes the data downstream, a schema change that seems harmless on their end — a renamed column, a field that used to always be present — can silently break every report built on top of it. The fix isn't more process; it's one team that can see both ends.</p>
+
+        <h2>Clean: making the data honest</h2>
+
+        <p>Raw data is never ready to use. The same customer appears three times with three spellings. A required field is blank for half of last Tuesday because of an upstream outage. Someone typed a date in the wrong format. Cleaning is where those get caught and fixed — deduplicated, validated against expected ranges, standardized into consistent types and formats — before anything downstream has to guess what a value "probably" meant.</p>
+
+        <h2>Model: shaping data for the question, not just storing it</h2>
+
+        <p>"Model" here doesn't mean machine learning — it means structure. Clean records still have to be joined, aggregated, and organized at the right grain for the question being asked. Revenue by customer per month is a different shape than revenue by transaction. Get the grain wrong and every number built on top of it is subtly, confidently wrong, which is worse than being obviously wrong.</p>
+
+        <h2>Serve and monitor: the two stages everyone forgets</h2>
+
+        <p>Serving is simply making the modeled data available where people actually work — a dashboard, a report, an API another system calls — fast enough that someone uses it instead of exporting a spreadsheet and starting over by hand. Monitoring is the stage that gets cut first under deadline pressure, and it's the one that catches the problem before a decision-maker does: did today's row count look normal, did a source stop sending data, did a number drift outside its usual range. Without it, the pipeline runs forever and nobody finds out it broke until someone in a meeting asks why the chart looks wrong.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Stage</th>
+                <th>What goes wrong without it</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ingest</td>
+                <td>Silent gaps when a source changes or an export fails — nobody notices data stopped arriving.</td>
+              </tr>
+              <tr>
+                <td>Clean</td>
+                <td>Duplicate customers inflate counts; one bad date skews every trend that includes it.</td>
+              </tr>
+              <tr>
+                <td>Model</td>
+                <td>Numbers at the wrong grain get compared as if they're the same thing, and nobody can explain the mismatch.</td>
+              </tr>
+              <tr>
+                <td>Serve</td>
+                <td>The right numbers exist somewhere, but too slow or too buried for anyone to actually use them.</td>
+              </tr>
+              <tr>
+                <td>Monitor</td>
+                <td>A broken pipeline keeps running and looking fine — until someone makes a decision on a number that's been wrong for weeks.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Why this is worth understanding, not just outsourcing</h2>
+
+        <p>You don't need to build any of this yourself to benefit from knowing what it is. The next time a vendor or a team quotes a project to "build a data pipeline," you now have five concrete questions to ask: how do we trace a number back to its source, how are bad values caught, what grain is this modeled at, where will people actually see it, and who gets paged when it breaks. Those five questions are the difference between a pipeline that quietly earns trust and one that quietly erodes it.</p>
+
+        <p>That's also why we treat a pipeline as one team's job, start to finish, rather than a baton passed between whoever happens to own ingestion, cleaning, and reporting this quarter. Each handoff is a place for someone's context to get lost — and the stage that gets skipped is almost always the one nobody felt fully accountable for.</p>
+
+        <p>None of this requires exotic tooling. A pipeline running on a handful of scheduled scripts and a plain SQL database can hit every one of these five stages properly. A pipeline running on an expensive modern stack can still skip two of them. The technology is rarely the limiting factor — someone has to actually own tracing a number back to where it came from, and keep owning it after launch, when the interesting work is supposedly done.</p>
+      </div>
+
+      <div class="post__cta">
+        <h2>Not sure where your data actually breaks?</h2>
+        <p>Datreon builds and repairs data pipelines end to end — ingestion through monitoring — so the numbers your team relies on are ones you can actually trace.</p>
+        <a href="/#contact" class="btn btn--fill btn--lg">Start a Conversation</a>
+      </div>
+
+      <a href="/blog" class="post__back"><span aria-hidden="true">←</span> All insights</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <div class="nav__brand">
+          <img class="nav__mark" src="/assets/datreon-icon.png" alt="" />
+          <img class="nav__wordmark" src="/assets/datreon-wordmark.png" alt="Datreon" />
+        </div>
+        <p class="footer__tagline">Engineering Intelligence. Delivering Impact.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="/#services">Services</a>
+        <a href="/#work">Work</a>
+        <a href="/#about">About</a>
+        <a href="/blog">Insights</a>
+        <a href="/#contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://www.linkedin.com/company/datreon" aria-label="Datreon on LinkedIn" rel="noopener" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v14.8H.2V8zm7.6 0h4.4v2h.06c.61-1.16 2.11-2.38 4.35-2.38 4.65 0 5.51 3.06 5.51 7.04v8.14h-4.6v-7.2c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8v7.33H7.8V8z"/></svg>
+        </a>
+        <span class="footer__domain">datreon.tech</span>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Datreon · Chesapeake, Virginia</p>
+    </div>
+  </footer>
+
+</body>
+</html>
