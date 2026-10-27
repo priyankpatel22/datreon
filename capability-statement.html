@@ -133,6 +133,10 @@
   .code__d{ font-size:8.8px; color:var(--muted); line-height:1.35; }
 
   .certs{ display:flex; flex-direction:column; gap:6px; }
+  /* SWaM badge in header — official art on its own white field */
+  .head__cert{ align-self:center; }
+  .head__cert-tile{ background:#fff; border-radius:4px; padding:5px 6px; line-height:0; }
+  .head__cert-tile img{ display:block; width:1.4in; height:auto; }
   .cert{ display:flex; align-items:flex-start; gap:7px; font-size:9.6px; line-height:1.4; color:#2c2d2e; }
   .cert__k{ width:5px; height:5px; margin-top:4px; background:var(--near); flex:none; transform:rotate(45deg); }
 
@@ -171,6 +175,9 @@
       <div class="head__title">
         <h1>Engineering Intelligence.<br/>Delivering Impact.</h1>
         <span class="sep"></span>
+        <div class="head__cert">
+          <div class="head__cert-tile"><img src="assets/swam-certified.jpg" alt="Certified SWaM by the Virginia Department of Small Business &amp; Supplier Diversity" /></div>
+        </div>
       </div>
       <p class="head__sub">
         Datreon is a Virginia-based software engineering and AI consulting firm. We design,
@@ -265,12 +272,13 @@
         <section class="sec data">
           <div class="sec__label">Company Data</div>
           <dl>
-            <dt>Business</dt><dd>Small Business</dd>
-            <dt>Founded</dt><dd>Founder-led · 5+ yrs consulting</dd>
-            <dt>Location</dt><dd>Virginia, USA</dd>
-            <dt>SAM.gov</dt><dd>Registered &amp; Active</dd>
+            <dt>Business</dt><dd>Small &middot; Minority-Owned</dd>
+            <dt>Founded</dt><dd>2019 · Founder-led</dd>
+            <dt>Location</dt><dd>Chesapeake, VA</dd>
+            <dt>SAM.gov</dt><dd>Registered</dd>
             <dt>UEI</dt><dd><span class="fill">&nbsp;&nbsp;to&nbsp;add&nbsp;&nbsp;</span></dd>
             <dt>CAGE</dt><dd><span class="fill">&nbsp;&nbsp;to&nbsp;add&nbsp;&nbsp;</span></dd>
+            <dt>VA SWaM</dt><dd>Cert #846160</dd>
           </dl>
         </section>
 
@@ -289,8 +297,9 @@
         <section class="sec">
           <div class="sec__label">Certifications</div>
           <div class="certs">
-            <div class="cert"><span class="cert__k"></span><span>Commonwealth of Virginia <strong>SWaM</strong> Certified (Small, Women-owned &amp; Minority-owned Business)</span></div>
+            <div class="cert"><span class="cert__k"></span><span>Commonwealth of Virginia <strong>SWaM</strong> Certified &mdash; Small &amp; Minority-Owned Business &middot; Cert #846160</span></div>
             <div class="cert"><span class="cert__k"></span><span>SAM.gov registered federal contractor</span></div>
+            <div class="cert"><span class="cert__k"></span><span>eVA registered vendor (Virginia eProcurement)</span></div>
           </div>
         </section>
 

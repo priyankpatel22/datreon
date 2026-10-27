@@ -51,12 +51,14 @@ Full-stack automotive auction platform — web and mobile application developmen
 
 | Field | Value |
 |---|---|
-| Business | Small Business |
-| Founded | Founder-led · 5+ yrs consulting |
-| Location | Virginia, USA |
-| SAM.gov | Registered & Active |
+| Legal Name | Array Technologies LLC, dba Datreon |
+| Business | Small Business · Minority-Owned |
+| Founded | 2019 · Founder-led |
+| Location | Chesapeake, Virginia, USA |
+| SAM.gov | Registered |
 | UEI | _to add_ |
 | CAGE | _to add_ |
+| VA SWaM Cert # | 846160 (valid through Oct 15, 2031) |
 
 ## NAICS Codes
 
@@ -71,8 +73,9 @@ Full-stack automotive auction platform — web and mobile application developmen
 
 ## Certifications
 
-- Commonwealth of Virginia **SWaM** Certified (Small, Women-owned & Minority-owned Business)
+- Commonwealth of Virginia **SWaM Certified** — Small Business & Minority-Owned Business · Cert #846160 (Virginia Department of Small Business and Supplier Diversity)
 - SAM.gov registered federal contractor
+- Registered vendor on eVA, Virginia's eProcurement portal
 
 ## Markets Served
 
