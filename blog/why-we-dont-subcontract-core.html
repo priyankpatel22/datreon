@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why We Don't Subcontract the Core Work · Datreon</title>
+  <meta name="description" content="Subcontracting the critical build looks efficient on a org chart and costs you on delivery day. Why Datreon keeps the core work on one accountable team — and what actually breaks at each handoff when firms don't." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#F2F2F0" />
+  <link rel="canonical" href="https://datreon.tech/blog/why-we-dont-subcontract-core" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/assets/datreon-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Datreon" />
+  <meta property="og:title" content="Why We Don't Subcontract the Core Work" />
+  <meta property="og:description" content="Subcontracting the critical build looks efficient on an org chart and costs you on delivery day. Here's what actually breaks at each handoff." />
+  <meta property="og:url" content="https://datreon.tech/blog/why-we-dont-subcontract-core" />
+  <meta property="og:image" content="https://datreon.tech/assets/og-image.png" />
+  <meta property="article:published_time" content="2026-11-04" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Why We Don't Subcontract the Core Work" />
+  <meta name="twitter:image" content="https://datreon.tech/assets/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css?v=31" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Why We Don't Subcontract the Core Work",
+    "description": "Subcontracting the critical build looks efficient on an org chart and costs you on delivery day. Here's what actually breaks at each handoff.",
+    "datePublished": "2026-11-04",
+    "dateModified": "2026-11-04",
+    "url": "https://datreon.tech/blog/why-we-dont-subcontract-core",
+    "image": "https://datreon.tech/assets/og-image.png",
+    "author": { "@type": "Organization", "name": "Datreon", "url": "https://datreon.tech/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Datreon",
+      "logo": { "@type": "ImageObject", "url": "https://datreon.tech/assets/datreon-icon.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://datreon.tech/blog/why-we-dont-subcontract-core" }
+  }
+  </script>
+</head>
+<body class="theme-light">
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="legal-nav">
+    <div class="container legal-nav__inner">
+      <a href="/" class="nav__brand">
+        <img class="nav__mark" src="/assets/datreon-icon.png" alt="" />
+        <img class="nav__wordmark" src="/assets/datreon-wordmark.png" alt="Datreon" />
+      </a>
+      <a href="/blog" class="legal-nav__back"><span aria-hidden="true">←</span> All insights</a>
+    </div>
+  </header>
+
+  <main class="legal">
+    <div class="container legal__inner">
+      <div class="post__watermark" aria-hidden="true"><img src="/assets/datreon-icon.png" alt="" /></div>
+      <p class="eyebrow">Perspective</p>
+      <h1 class="legal__title">Why We Don't Subcontract the Core Work</h1>
+      <div class="post__meta">
+        <span class="post__cat">Datreon</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>November 4, 2026</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>6 min read</span>
+      </div>
+
+      <p class="legal__lead">Subcontracting the build looks efficient on a staffing plan: more hands, lower blended rate, faster ramp. On delivery day it tends to look different — a system nobody fully understands, owned by nobody in particular. Here's why we don't do it to the core work, and what actually breaks when firms do.</p>
+
+      <div class="legal__body">
+        <p>Every services firm faces the same temptation at some point: a deadline is tight, the bench is thin, and a subcontractor can plug the gap for less than it costs to hire. For peripheral work — a one-off integration, a short burst of specialized testing — that trade can be fine. The trouble starts when firms apply the same logic to the part of the engagement that actually matters: the architecture, the core build, the decisions that determine whether the system holds up in three years.</p>
+
+        <p>We don't subcontract that work. Not because subcontractors are incapable — plenty are excellent — but because of what the arrangement structurally does to context, accountability, and quality, regardless of who's doing the coding. The problem isn't talent. It's the chain of custody.</p>
+
+        <h2>A chain is only as strong as its handoffs</h2>
+
+        <p>Picture the two ways a project can run. In the first, one team sits with you from the first requirements conversation through the last deploy. They carry the "why" behind every decision because they were in the room when it was made. In the second, your requirements pass through a prime contractor, who passes a scope document to a subcontractor, who may pass pieces of it further down. Each arrow in that chain is a point where something is translated, summarized, or simply lost.</p>
+
+        <figure class="post__figure">
+          <svg viewBox="0 0 720 230" role="img" aria-labelledby="figA-t figA-d" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono', ui-monospace, monospace">
+            <title id="figA-t">Direct ownership versus layered subcontracting</title>
+            <desc id="figA-d">One team working directly from client to delivery keeps a single chain of ownership. Subcontracting adds a prime-contractor and subcontractor layer, each a point where context, accountability, and quality can be lost.</desc>
+            <text x="0" y="14" font-size="12" letter-spacing="1.5" fill="#686868">ONE TEAM — DIRECT</text>
+            <g font-size="13" text-anchor="middle">
+              <rect x="0" y="24" width="200" height="44" rx="9" fill="none" stroke="#111111" stroke-opacity="0.35"/>
+              <text x="100" y="50" fill="#111111">You</text>
+              <rect x="260" y="24" width="200" height="44" rx="9" fill="#F5C53A"/>
+              <text x="360" y="50" fill="#111111">Datreon — one team</text>
+              <rect x="520" y="24" width="200" height="44" rx="9" fill="#0F9C8B"/>
+              <text x="620" y="50" fill="#FFFFFF">What ships</text>
+            </g>
+            <g stroke="#111111" stroke-opacity="0.45" stroke-width="1.6" fill="#111111" fill-opacity="0.45">
+              <line x1="200" y1="46" x2="254" y2="46"/>
+              <polygon points="254,46 244,41 244,51"/>
+              <line x1="460" y1="46" x2="514" y2="46"/>
+              <polygon points="514,46 504,41 504,51"/>
+            </g>
+            <text x="0" y="112" font-size="12" letter-spacing="1.5" fill="#686868">SUBCONTRACTED — LAYERED HANDOFFS</text>
+            <g font-size="12.5" text-anchor="middle">
+              <rect x="0" y="122" width="150" height="44" rx="9" fill="none" stroke="#111111" stroke-opacity="0.35"/>
+              <text x="75" y="148" fill="#111111">You</text>
+              <rect x="190" y="122" width="150" height="44" rx="9" fill="none" stroke="#111111" stroke-opacity="0.35"/>
+              <text x="265" y="148" fill="#111111">Prime contractor</text>
+              <rect x="380" y="122" width="150" height="44" rx="9" fill="none" stroke="#111111" stroke-opacity="0.35"/>
+              <text x="455" y="148" fill="#111111">Subcontractor</text>
+              <rect x="570" y="122" width="150" height="44" rx="9" fill="#2A3F73"/>
+              <text x="645" y="148" fill="#FFFFFF">What ships</text>
+            </g>
+            <g stroke="#ED6A4C" stroke-width="2">
+              <line x1="150" y1="144" x2="190" y2="144" stroke-dasharray="3,3"/>
+              <line x1="340" y1="144" x2="380" y2="144" stroke-dasharray="3,3"/>
+              <line x1="530" y1="144" x2="570" y2="144" stroke-dasharray="3,3"/>
+            </g>
+            <g font-size="11" fill="#ED6A4C" text-anchor="middle">
+              <text x="170" y="190">Context</text>
+              <text x="170" y="203">lost</text>
+              <text x="360" y="190">Owner</text>
+              <text x="360" y="203">unclear</text>
+              <text x="550" y="190">Quality</text>
+              <text x="550" y="203">drifts</text>
+            </g>
+          </svg>
+          <figcaption class="post__fig-cap">Every handoff in a subcontracting chain is a place where context, accountability, or quality can quietly go missing.</figcaption>
+        </figure>
+
+        <p>None of this requires anyone to be careless. A prime contractor's project manager, summarizing a scope document for a subcontractor three steps removed from the client, is doing their job competently. The information still thins out with each retelling — the same way an instruction loses nuance every time it's relayed secondhand. By the time it reaches whoever is actually writing the code, "the client needs this to handle edge case X because of a specific operational reason" has often become "handle edge case X."</p>
+
+        <h2>Where the context actually lives</h2>
+
+        <p>The reason this matters more for core work than peripheral work is simple: the core is where judgment calls live. Deciding how a system should behave when two business rules conflict, or which tradeoff to make under a tight data constraint, requires understanding <em>why</em> the requirement exists — not just what it says. That understanding is built in conversation, over time, with the people who will actually build the thing. It doesn't survive being written down and handed off, because so much of it was never written down in the first place.</p>
+
+        <blockquote>A requirements document tells you what was asked. It almost never tells you why — and why is exactly what you need when reality doesn't match the document.</blockquote>
+
+        <h2>What breaks, specifically</h2>
+
+        <p>It's worth being concrete about what a handoff actually costs, rather than just asserting that "subcontracting is risky." Here's where the damage tends to show up in practice:</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Handoff</th>
+                <th>What gets lost</th>
+                <th>What it costs you</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Client → Prime contractor</td>
+                <td>The reasoning behind requirements, not just the requirements</td>
+                <td>Decisions get made correctly on paper and wrong in practice</td>
+              </tr>
+              <tr>
+                <td>Prime → Subcontractor</td>
+                <td>Direct accountability — the people who sold the work aren't the people building it</td>
+                <td>No single person owns the outcome end-to-end</td>
+              </tr>
+              <tr>
+                <td>Subcontractor → further sub-layer</td>
+                <td>Original intent, reinterpreted a second or third time</td>
+                <td>Rework, scope creep, and missed edge cases late in the schedule</td>
+              </tr>
+              <tr>
+                <td>Any layer → You</td>
+                <td>Direct visibility, replaced by status reports written for optics</td>
+                <td>You learn about real problems late, and secondhand</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Notice that none of these rows describe a skills gap. They describe structure doing what structure does: the more intermediaries between a decision and its execution, the more that decision drifts before it ships.</p>
+
+        <h2>What "owning it" actually means</h2>
+
+        <p>"One Team. Total Ownership." isn't a slogan we picked because it sounds good — it's a description of how we staff engagements. The people in the kickoff call are the people writing the architecture and the people debugging it in production eighteen months later. There's no second company to negotiate with when a requirement turns out to be more complicated than it first looked, and no "that was the subcontractor's piece" when something breaks.</p>
+
+        <p>That doesn't mean we never bring in outside specialists — a narrowly scoped security audit or a highly specific integration can make sense to bring in from outside. The line we hold is around the core: the architecture, the system design, the decisions that determine whether this still works correctly two years from now. That stays with the team that has to answer for it.</p>
+
+        <h2>The honest tradeoff</h2>
+
+        <p>Keeping the core work in-house costs more per hour on paper than routing it through a cheaper subcontracted layer. We think that comparison is the wrong one. The real comparison is total cost: the hours spent re-explaining context, the rework from requirements that drifted through three handoffs, and the schedule risk of discovering a misunderstanding during integration testing instead of during the first conversation. Direct ownership isn't the expensive option. It's usually the one that avoids paying twice.</p>
+      </div>
+
+      <div class="post__cta">
+        <h2>Want to know exactly who's building your system?</h2>
+        <p>With Datreon, the people in your first conversation are the people who ship it — and the people you call when something needs to change.</p>
+        <a href="/#contact" class="btn btn--fill btn--lg">Start a Conversation</a>
+      </div>
+
+      <a href="/blog" class="post__back"><span aria-hidden="true">←</span> All insights</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <div class="nav__brand">
+          <img class="nav__mark" src="/assets/datreon-icon.png" alt="" />
+          <img class="nav__wordmark" src="/assets/datreon-wordmark.png" alt="Datreon" />
+        </div>
+        <p class="footer__tagline">Engineering Intelligence. Delivering Impact.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="/#services">Services</a>
+        <a href="/#work">Work</a>
+        <a href="/#about">About</a>
+        <a href="/blog">Insights</a>
+        <a href="/#contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://www.linkedin.com/company/datreon" aria-label="Datreon on LinkedIn" rel="noopener" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v14.8H.2V8zm7.6 0h4.4v2h.06c.61-1.16 2.11-2.38 4.35-2.38 4.65 0 5.51 3.06 5.51 7.04v8.14h-4.6v-7.2c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8v7.33H7.8V8z"/></svg>
+        </a>
+        <span class="footer__domain">datreon.tech</span>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Datreon · Chesapeake, Virginia</p>
+    </div>
+  </footer>
+
+</body>
+</html>
