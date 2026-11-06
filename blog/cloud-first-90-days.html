@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your First 90 Days on the Cloud: A Sane Setup for Small Teams · Datreon</title>
+  <meta name="description" content="A pragmatic 90-day plan for a small team moving to AWS, Azure, or GCP: identity and guardrails first, then pipelines and environments, then observability and cost control — in the right order." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#F2F2F0" />
+  <link rel="canonical" href="https://datreon.tech/blog/cloud-first-90-days" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/assets/datreon-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Datreon" />
+  <meta property="og:title" content="Your First 90 Days on the Cloud: A Sane Setup for Small Teams" />
+  <meta property="og:description" content="A pragmatic 90-day plan for a small team moving to the cloud: identity and guardrails first, then pipelines and environments, then observability and cost control." />
+  <meta property="og:url" content="https://datreon.tech/blog/cloud-first-90-days" />
+  <meta property="og:image" content="https://datreon.tech/assets/og-image.png" />
+  <meta property="article:published_time" content="2026-11-06" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Your First 90 Days on the Cloud: A Sane Setup for Small Teams" />
+  <meta name="twitter:image" content="https://datreon.tech/assets/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css?v=31" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Your First 90 Days on the Cloud: A Sane Setup for Small Teams",
+    "description": "A pragmatic 90-day plan for a small team moving to the cloud: identity and guardrails first, then pipelines and environments, then observability and cost control.",
+    "datePublished": "2026-11-06",
+    "dateModified": "2026-11-06",
+    "url": "https://datreon.tech/blog/cloud-first-90-days",
+    "image": "https://datreon.tech/assets/og-image.png",
+    "author": { "@type": "Organization", "name": "Datreon", "url": "https://datreon.tech/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Datreon",
+      "logo": { "@type": "ImageObject", "url": "https://datreon.tech/assets/datreon-icon.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://datreon.tech/blog/cloud-first-90-days" }
+  }
+  </script>
+</head>
+<body class="theme-light">
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="legal-nav">
+    <div class="container legal-nav__inner">
+      <a href="/" class="nav__brand">
+        <img class="nav__mark" src="/assets/datreon-icon.png" alt="" />
+        <img class="nav__wordmark" src="/assets/datreon-wordmark.png" alt="Datreon" />
+      </a>
+      <a href="/blog" class="legal-nav__back"><span aria-hidden="true">←</span> All insights</a>
+    </div>
+  </header>
+
+  <main class="legal">
+    <div class="container legal__inner">
+      <div class="post__watermark" aria-hidden="true"><img src="/assets/datreon-icon.png" alt="" /></div>
+      <p class="eyebrow">Cloud & DevOps</p>
+      <h1 class="legal__title">Your First 90 Days on the Cloud: A Sane Setup for Small Teams</h1>
+      <div class="post__meta">
+        <span class="post__cat">Datreon</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>November 6, 2026</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>7 min read</span>
+      </div>
+
+      <p class="legal__lead">Most small teams don't fail at the cloud because they picked the wrong provider. They fail because they skipped the boring setup — identity, guardrails, environments — and went straight to building. Here's the order that actually holds up.</p>
+
+      <div class="legal__body">
+        <p>Every cloud provider will happily let a five-person team create an account, attach a credit card, and start deploying inside the hour. That speed is the trap. Without a few basics in place first, the bill becomes unpredictable, a single leaked key becomes a real incident, and nobody can say with confidence what's running where or why.</p>
+
+        <p>None of this requires a platform team or a six-month initiative. It requires doing a short list of things in the right order, before the environment gets complicated enough that doing them later means untangling a mess instead of avoiding one.</p>
+
+        <h2>Days 0–30: identity and guardrails, before anything ships</h2>
+
+        <p>The first 30 days are not about shipping features. They're about building the floor everything else stands on. Three things matter most, in this order:</p>
+
+        <ul>
+          <li><strong>A real identity foundation.</strong> One organization account, SSO tied to your existing identity provider, and no shared logins. Every person and every service gets its own identity — never a shared root credential passed around in a chat thread.</li>
+          <li><strong>Least-privilege access from day one.</strong> Start every role and service account with the narrowest permission set that lets it do its job, and widen only when something concretely needs it. It's far easier to grant access as you go than to claw back broad permissions once a dozen things quietly depend on them.</li>
+          <li><strong>Budgets and alerts before workloads.</strong> Set a spending budget and an alert threshold on every account before the first real workload runs, not after the first surprise invoice. A $200 anomaly alert costs nothing to set up and catches the runaway job or the forgotten test environment before it costs real money.</li>
+        </ul>
+
+        <p>Tagging belongs here too, even though it feels like busywork. A consistent tag for environment, owner, and cost center on every resource is what makes the next two phases possible — you can't right-size or investigate spend on something nobody can attribute to a team or a purpose.</p>
+
+        <figure class="post__figure">
+          <svg viewBox="0 0 720 260" role="img" aria-labelledby="figA-t figA-d" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono', ui-monospace, monospace">
+            <title id="figA-t">A 90-day cloud setup timeline in three phases</title>
+            <desc id="figA-d">Days 0 to 30 cover identity and guardrails. Days 31 to 60 cover pipelines and environments. Days 61 to 90 cover observability and cost discipline.</desc>
+            <g>
+              <rect x="5" y="10" width="220" height="238" rx="10" fill="#2F7FD1" fill-opacity="0.10"/>
+              <rect x="5" y="10" width="220" height="34" rx="10" fill="#2F7FD1"/>
+              <text x="115" y="32" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">DAYS 0–30</text>
+              <text x="115" y="60" font-size="11.5" fill="#111111" text-anchor="middle">Identity &amp; guardrails</text>
+              <rect x="20" y="78" width="190" height="44" rx="8" fill="#2F7FD1"/>
+              <text x="115" y="104" font-size="11.5" fill="#FFFFFF" text-anchor="middle">SSO + org account</text>
+              <rect x="20" y="132" width="190" height="44" rx="8" fill="#2F7FD1"/>
+              <text x="115" y="158" font-size="11.5" fill="#FFFFFF" text-anchor="middle">Least-privilege IAM</text>
+              <rect x="20" y="186" width="190" height="44" rx="8" fill="#2F7FD1"/>
+              <text x="115" y="212" font-size="11.5" fill="#FFFFFF" text-anchor="middle">Budgets + alerts</text>
+            </g>
+            <g>
+              <rect x="250" y="10" width="220" height="238" rx="10" fill="#5B54E0" fill-opacity="0.10"/>
+              <rect x="250" y="10" width="220" height="34" rx="10" fill="#5B54E0"/>
+              <text x="360" y="32" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">DAYS 31–60</text>
+              <text x="360" y="60" font-size="11.5" fill="#111111" text-anchor="middle">Pipelines &amp; environments</text>
+              <rect x="265" y="78" width="190" height="44" rx="8" fill="#5B54E0"/>
+              <text x="360" y="104" font-size="11.5" fill="#FFFFFF" text-anchor="middle">Infra as code</text>
+              <rect x="265" y="132" width="190" height="44" rx="8" fill="#5B54E0"/>
+              <text x="360" y="158" font-size="11.5" fill="#FFFFFF" text-anchor="middle">Dev / stage / prod split</text>
+              <rect x="265" y="186" width="190" height="44" rx="8" fill="#5B54E0"/>
+              <text x="360" y="212" font-size="11.5" fill="#FFFFFF" text-anchor="middle">CI/CD on every merge</text>
+            </g>
+            <g>
+              <rect x="495" y="10" width="220" height="238" rx="10" fill="#0F9C8B" fill-opacity="0.10"/>
+              <rect x="495" y="10" width="220" height="34" rx="10" fill="#0F9C8B"/>
+              <text x="605" y="32" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">DAYS 61–90</text>
+              <text x="605" y="60" font-size="11.5" fill="#111111" text-anchor="middle">Observability &amp; cost</text>
+              <rect x="510" y="78" width="190" height="44" rx="8" fill="#0F9C8B"/>
+              <text x="605" y="104" font-size="11.5" fill="#FFFFFF" text-anchor="middle">Logs, metrics, traces</text>
+              <rect x="510" y="132" width="190" height="44" rx="8" fill="#0F9C8B"/>
+              <text x="605" y="158" font-size="11.5" fill="#FFFFFF" text-anchor="middle">On-call runbook</text>
+              <rect x="510" y="186" width="190" height="44" rx="8" fill="#0F9C8B"/>
+              <text x="605" y="212" font-size="11.5" fill="#FFFFFF" text-anchor="middle">Monthly cost review</text>
+            </g>
+          </svg>
+          <figcaption class="post__fig-cap">Three phases, in order. Each one depends on the last — skip ahead and you'll come back to patch it under pressure.</figcaption>
+        </figure>
+
+        <h2>Days 31–60: pipelines and environments, not just servers</h2>
+
+        <p>With the floor in place, the next thirty days build the path code actually takes to reach users. Two habits pay for themselves immediately: defining infrastructure as code from the start, and keeping development, staging, and production genuinely separate — different accounts or projects, not just a naming convention inside one.</p>
+
+        <p>Infrastructure as code means every resource — networks, databases, queues, permissions — is defined in a file that's reviewed and versioned like application code, not clicked into existence in a console. It's slower on day one and much faster on day sixty, because rebuilding an environment, auditing what changed, or recovering from a mistake all become a matter of reading a diff instead of reconstructing someone's memory.</p>
+
+        <p>Set up continuous integration and deployment early, even if the pipeline is simple: run tests, build, deploy to staging automatically on every merge. A small team without CI/CD tends to deploy rarely and nervously, which paradoxically makes each deployment riskier — changes pile up, and a problem could be hiding anywhere in a large batch instead of one small one.</p>
+
+        <h2>Days 61–90: see what's actually happening, and what it costs</h2>
+
+        <p>By the last phase, there's enough running that flying blind becomes expensive. This is when logging, metrics, and basic tracing stop being optional. The goal isn't a sophisticated observability platform — it's being able to answer three questions quickly: is it up, is it slow, and what changed right before it broke.</p>
+
+        <p>Pair that with a short, written on-call runbook: who gets paged, what the first three steps are for a common failure, and where the dashboards live. A runbook that lives only in one person's head is a single point of failure disguised as expertise.</p>
+
+        <blockquote>The bill is a symptom. The system that produced it is the thing worth fixing.</blockquote>
+
+        <p>Finally, make a monthly cost review a standing habit, not a fire drill. Thirty minutes looking at spend by tag, flagging anything idle or oversized, and checking budget alerts against reality will catch more waste than any one-time optimization sprint.</p>
+
+        <h2>What this buys you — and what to skip</h2>
+
+        <p>This plan is deliberately not a maximal one. A five-person team doesn't need a dedicated platform team, a service mesh, or a multi-region failover strategy in month one — those are real tools for a scale and risk profile most teams haven't reached yet. Add them when the evidence calls for them, not because a blog post (including this one) said they're best practice.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Phase</th>
+                <th>Do this</th>
+                <th>Skip for now</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Days 0–30</td>
+                <td>SSO, least-privilege IAM, budgets/alerts, consistent tagging</td>
+                <td>Custom identity provider, fine-grained custom roles for every edge case</td>
+              </tr>
+              <tr>
+                <td>Days 31–60</td>
+                <td>Infra as code, separate dev/stage/prod, CI/CD on every merge</td>
+                <td>Multi-cloud abstraction layers, a full internal developer platform</td>
+              </tr>
+              <tr>
+                <td>Days 61–90</td>
+                <td>Centralized logs/metrics, a short on-call runbook, monthly cost review</td>
+                <td>Custom observability tooling, multi-region active-active setups</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>What makes this order work is that each phase makes the next one cheaper. Identity and tagging make cost review possible. Infrastructure as code makes environments reproducible enough that observability data actually means something. Skip a phase and you don't avoid the work — you just do it later, under more pressure, with more at stake.</p>
+
+        <p>Ninety days is enough time to get a small team onto solid footing without over-building for a scale that may never arrive. The teams that get this right aren't the ones with the fanciest setup — they're the ones who did the unglamorous parts in order and didn't skip ahead.</p>
+      </div>
+
+      <div class="post__cta">
+        <h2>Moving to the cloud and want the first 90 days to go smoothly?</h2>
+        <p>Datreon helps small teams stand up a cloud foundation that's sized right — identity, pipelines, and observability, without the over-engineering.</p>
+        <a href="/#contact" class="btn btn--fill btn--lg">Start a Conversation</a>
+      </div>
+
+      <a href="/blog" class="post__back"><span aria-hidden="true">←</span> All insights</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <div class="nav__brand">
+          <img class="nav__mark" src="/assets/datreon-icon.png" alt="" />
+          <img class="nav__wordmark" src="/assets/datreon-wordmark.png" alt="Datreon" />
+        </div>
+        <p class="footer__tagline">Engineering Intelligence. Delivering Impact.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="/#services">Services</a>
+        <a href="/#work">Work</a>
+        <a href="/#about">About</a>
+        <a href="/blog">Insights</a>
+        <a href="/#contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://www.linkedin.com/company/datreon" aria-label="Datreon on LinkedIn" rel="noopener" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v14.8H.2V8zm7.6 0h4.4v2h.06c.61-1.16 2.11-2.38 4.35-2.38 4.65 0 5.51 3.06 5.51 7.04v8.14h-4.6v-7.2c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8v7.33H7.8V8z"/></svg>
+        </a>
+        <span class="footer__domain">datreon.tech</span>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Datreon · Chesapeake, Virginia</p>
+    </div>
+  </footer>
+
+</body>
+</html>
